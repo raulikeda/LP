@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -237,7 +237,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
     
   </span>
   
@@ -686,108 +686,108 @@
 <li>Geração de Código</li>
 </ol>
 <h4 id="exemplo-de-codigo">Exemplo de Código:</h4>
-<pre><code>To be defined...
-</code></pre>
+<div class="highlight"><pre><span></span><code>To be defined...
+</code></pre></div>
 <h4 id="mesmo-exemplo-em-assembly-nasm-gerado-pelo-compilador">Mesmo exemplo em Assembly NASM (gerado pelo compilador):</h4>
-<pre><code class="language-asm">section .data
-  format_out: db &quot;%d&quot;, 10, 0 ; format do printf
-  format_in: db &quot;%d&quot;, 0 ; format do scanf
-  scan_int: dd 0; 32-bits integer
+<div class="highlight"><pre><span></span><code><span class="nf">section</span><span class="w"> </span><span class="no">.data</span>
+<span class="w">  </span><span class="nl">format_out:</span><span class="w"> </span><span class="nf">db</span><span class="w"> </span><span class="err">&quot;</span><span class="nv">%d</span><span class="err">&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">; format do printf</span>
+<span class="w">  </span><span class="nl">format_in:</span><span class="w"> </span><span class="nf">db</span><span class="w"> </span><span class="err">&quot;</span><span class="nv">%d</span><span class="err">&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">; format do scanf</span>
+<span class="w">  </span><span class="nl">scan_int:</span><span class="w"> </span><span class="nf">dd</span><span class="w"> </span><span class="mi">0</span><span class="c1">; 32-bits integer</span>
 
-section .text
+<span class="nf">section</span><span class="w"> </span><span class="no">.text</span>
 
-  extern printf ; usar _printf para Windows
-  extern scanf ; usar _scanf para Windows
-  ; extern _ExitProcess@4 ; usar para Windows
-  global _start ; início do programa
+<span class="w">  </span><span class="nf">extern</span><span class="w"> </span><span class="no">printf</span><span class="w"> </span><span class="c1">; usar _printf para Windows</span>
+<span class="w">  </span><span class="nf">extern</span><span class="w"> </span><span class="no">scanf</span><span class="w"> </span><span class="c1">; usar _scanf para Windows</span>
+<span class="w">  </span><span class="c1">; extern _ExitProcess@4 ; usar para Windows</span>
+<span class="w">  </span><span class="nf">global</span><span class="w"> </span><span class="no">_start</span><span class="w"> </span><span class="c1">; início do programa</span>
 
-_start:
-  push ebp ; guarda o EBP
-  mov ebp, esp ; zera a pilha
+<span class="nl">_start:</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">ebp</span><span class="w"> </span><span class="c1">; guarda o EBP</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">ebp</span><span class="p">,</span><span class="w"> </span><span class="no">esp</span><span class="w"> </span><span class="c1">; zera a pilha</span>
 
-  ; aqui começa o codigo gerado:
+<span class="w">  </span><span class="c1">; aqui começa o codigo gerado:</span>
 
-  sub esp, 4 ; var i int [EBP-4]
-  sub esp, 4 ; var n int [EBP-8]
-  sub esp, 4 ; var f int [EBP-12]
+<span class="w">  </span><span class="nf">sub</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">; var i int [EBP-4]</span>
+<span class="w">  </span><span class="nf">sub</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">; var n int [EBP-8]</span>
+<span class="w">  </span><span class="nf">sub</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">; var f int [EBP-12]</span>
 
-  mov eax, 1
-  mov [ebp-12], eax ; f = 1
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-12</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; f = 1</span>
 
-  push scan_int ; endereço de memória de suporte
-  push format_in ; formato de entrada (int)
-  call scanf
-  add esp, 8 ; Remove os argumentos da pilha
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">scan_int</span><span class="w"> </span><span class="c1">; endereço de memória de suporte</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">format_in</span><span class="w"> </span><span class="c1">; formato de entrada (int)</span>
+<span class="w">  </span><span class="nf">call</span><span class="w"> </span><span class="no">scanf</span>
+<span class="w">  </span><span class="nf">add</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="c1">; Remove os argumentos da pilha</span>
 
-  mov eax, dword [scan_int] ; retorna o valor lido em EAX
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">dword</span><span class="w"> </span><span class="p">[</span><span class="no">scan_int</span><span class="p">]</span><span class="w"> </span><span class="c1">; retorna o valor lido em EAX</span>
 
-  mov [ebp-8], eax ; n = Scan()
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-8</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; n = Scan()</span>
 
-  mov eax, 2
-  mov [ebp-4], eax ; i = 2
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-4</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; i = 2</span>
 
-  loop_34: ; label do loop 
+<span class="w">  </span><span class="nl">loop_34:</span><span class="w"> </span><span class="c1">; label do loop </span>
 
-  mov eax, 1
-  push eax ; empilha 1
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; empilha 1</span>
 
-  mov eax, [ebp-8] ; recupera n
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-8</span><span class="p">]</span><span class="w"> </span><span class="c1">; recupera n</span>
 
-  pop ecx
-  add eax, ecx ; n + 1
-  push eax ; empilha n + 1
+<span class="w">  </span><span class="nf">pop</span><span class="w"> </span><span class="no">ecx</span>
+<span class="w">  </span><span class="nf">add</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1">; n + 1</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; empilha n + 1</span>
 
-  ; condicional do loop
-  mov eax, [ebp-4]; recupera i
+<span class="w">  </span><span class="c1">; condicional do loop</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-4</span><span class="p">]</span><span class="c1">; recupera i</span>
 
-  pop ecx
-  cmp eax, ecx
-  mov eax, 0
-  mov ecx, 1
-  cmovl eax, ecx ; i &lt; n + 1
+<span class="w">  </span><span class="nf">pop</span><span class="w"> </span><span class="no">ecx</span>
+<span class="w">  </span><span class="nf">cmp</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">ecx</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">ecx</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="nf">cmovl</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1">; i &lt; n + 1</span>
 
-  cmp eax, 0 ; se a condição for falsa, sai
-  je exit_34
+<span class="w">  </span><span class="nf">cmp</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">; se a condição for falsa, sai</span>
+<span class="w">  </span><span class="nf">je</span><span class="w"> </span><span class="no">exit_34</span>
 
-  ; bloco de comandos
-  mov eax, [ebp-4] ; i
-  push eax ; empilha i
-  mov eax, [ebp-12] ; f
-  pop ecx ; desempilha i
-  imul ecx ; f * i
-  mov [ebp-12], eax ; f = f * i
+<span class="w">  </span><span class="c1">; bloco de comandos</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-4</span><span class="p">]</span><span class="w"> </span><span class="c1">; i</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; empilha i</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-12</span><span class="p">]</span><span class="w"> </span><span class="c1">; f</span>
+<span class="w">  </span><span class="nf">pop</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1">; desempilha i</span>
+<span class="w">  </span><span class="nf">imul</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1">; f * i</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-12</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; f = f * i</span>
 
-  ; incremento
-  mov eax, 1
-  push eax ; empilha 1
-  mov eax, [ebp-4]
-  pop ecx
-  add eax, ecx ; i + 1
+<span class="w">  </span><span class="c1">; incremento</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; empilha 1</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-4</span><span class="p">]</span>
+<span class="w">  </span><span class="nf">pop</span><span class="w"> </span><span class="no">ecx</span>
+<span class="w">  </span><span class="nf">add</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1">; i + 1</span>
 
-  mov [ebp-4], eax ; i = i + 1
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-4</span><span class="p">],</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; i = i + 1</span>
 
-  jmp loop_34
-  exit_34:
+<span class="w">  </span><span class="nf">jmp</span><span class="w"> </span><span class="no">loop_34</span>
+<span class="w">  </span><span class="nl">exit_34:</span>
 
-  mov eax, [ebp-12]
-  push eax ; empilha f
-  push format_out ; formato int de saida
-  call printf ; Print f
-  add esp, 8 ; limpa os argumentos
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">ebp-12</span><span class="p">]</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">eax</span><span class="w"> </span><span class="c1">; empilha f</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">format_out</span><span class="w"> </span><span class="c1">; formato int de saida</span>
+<span class="w">  </span><span class="nf">call</span><span class="w"> </span><span class="no">printf</span><span class="w"> </span><span class="c1">; Print f</span>
+<span class="w">  </span><span class="nf">add</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="c1">; limpa os argumentos</span>
 
-  ; aqui termina o código gerado
+<span class="w">  </span><span class="c1">; aqui termina o código gerado</span>
 
-  mov esp, ebp ; reestabelece a pilha
-  pop ebp
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="w"> </span><span class="no">ebp</span><span class="w"> </span><span class="c1">; reestabelece a pilha</span>
+<span class="w">  </span><span class="nf">pop</span><span class="w"> </span><span class="no">ebp</span>
 
-  ; chamada da interrupcao de saida (Linux)
-  mov eax, 1   
-  xor ebx, ebx 
-  int 0x80     
-  ; Para Windows:
-  ; push dword 0        
-  ; call _ExitProcess@4
-</code></pre>
+<span class="w">  </span><span class="c1">; chamada da interrupcao de saida (Linux)</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span>
+<span class="w">  </span><span class="no">xor</span><span class="w"> </span><span class="no">ebx</span><span class="p">,</span><span class="w"> </span><span class="no">ebx</span><span class="w"> </span>
+<span class="w">  </span><span class="no">int</span><span class="w"> </span><span class="mi">0x80</span><span class="w">     </span>
+<span class="w">  </span><span class="c1">; Para Windows:</span>
+<span class="w">  </span><span class="c1">; push dword 0        </span>
+<span class="w">  </span><span class="c1">; call _ExitProcess@4</span>
+</code></pre></div>
 <h4 id="tecnicas">Técnicas</h4>
 <ul>
 <li>Para os nós que dependem de filhos que retornam valor (<em>UnOp</em>, <em>BinOp</em>, etc), assumir que o <em>Generate</em> do filho sempre vira em <code>EAX</code>. Para pais que possuem 2 ou mais filhos, utilizar a pilha com <code>ECX</code>.</li>
@@ -811,15 +811,15 @@ _start:
 <li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.go sai teste.asm</li>
 <li>Para montar o código e transformá-lo em executável x86 + Linux (<strong>versão do Servidor</strong>):</li>
 </ul>
-<pre><code>$ nasm -f elf32 -o program.o program.asm
+<div class="highlight"><pre><span></span><code>$ nasm -f elf32 -o program.o program.asm
 $ gcc -m32 -no-pie -nostartfiles -o program program.o -e _start
-</code></pre>
+</code></pre></div>
 <ul>
 <li>Para montar x86 + Windows (verificar as constantes do código):</li>
 </ul>
-<pre><code>$ nasm -f win32 -o program.obj program.asm
+<div class="highlight"><pre><span></span><code>$ nasm -f win32 -o program.obj program.asm
 $ gcc -m32 -no-pie -nostartfiles -o program.exe program.obj -e _start
-</code></pre>
+</code></pre></div>
 <p>Para mais informações: https://en.wikipedia.org/wiki/Executable_and_Linkable_Format</p>
 <p>Em caso de problemas com o assembly, use o <strong>gdb</strong>.</p>
 <h3 id="questionario">Questionário</h3>
@@ -875,10 +875,10 @@ $ gcc -m32 -no-pie -nostartfiles -o program.exe program.obj -e _start
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>

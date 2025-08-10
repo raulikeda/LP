@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -237,7 +237,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
     
   </span>
   
@@ -641,14 +641,16 @@
 <ol>
 <li>Fazer com que o compilador ignore os comentários. Crie uma classe <em>PrePro</em> com uma função <em>filter()</em> estática para remover os comentários. Use antes de carregar no Tokenizer.</li>
 <li>Criar uma classe abstrata (ou interface) chamada <em>Node</em>, contendo os seguintes atributos e métodos:
-  <code>value: variant
-    children: list of nodes
-    Evaluate(): variant</code></li>
+  <div class="highlight"><pre><span></span><code>  value: variant
+  children: list of nodes
+  Evaluate(): variant
+</code></pre></div></li>
 <li>Criar as seguintes classes que herdam (ou implementam) a classe <em>Node</em>:
-  <code>BinOp - Binary Operation. Contem 2 filhos
-    UnOp - Unary Operation. Contem um filho
-    IntVal - Integer value. Não contem filhos
-    NoOp - No Operation (Dummy). Não contem filhos</code></li>
+  <div class="highlight"><pre><span></span><code>  BinOp - Binary Operation. Contem 2 filhos
+  UnOp - Unary Operation. Contem um filho
+  IntVal - Integer value. Não contem filhos
+  NoOp - No Operation (Dummy). Não contem filhos
+</code></pre></div></li>
 </ol>
 <p>Todas as classes acima devem retornar no método <em>Evaluate()</em> - via <em>overriding</em> - o valor correspondentes à operação de cada classe. Por Exemplo: <em>Evaluate()</em> do <em>IntVal</em> deve retornar o próprio valor inteiro, <em>Evaluate()</em> de <em>BinOp</em> deve retornar a operação dos seus dois filhos, etc.</p>
 <ol>
@@ -657,9 +659,9 @@
 <li>Modificar o programa principal para ler um arquivo de extensão <em>.zig</em> ao invés de ler a entrada do console. Não travar a extensão no compilador.</li>
 </ol>
 <h3 id="base-de-testes">Base de Testes:</h3>
-<pre><code>  Todos os testes dos roteiros anteriores
-</code></pre>
-<p>\vspace{5cm}</p>
+<p><div class="highlight"><pre><span></span><code>  Todos os testes dos roteiros anteriores
+</code></pre></div>
+\vspace{5cm}</p>
 <h3 id="questionario">Questionário</h3>
 <ol>
 <li>Montar a árvore de derivação e a AST para: (2 + 3) / ( 5 * 1). Explique por que parênteses não precisa de uma classe <em>Node</em> específica.</li>
@@ -713,10 +715,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>

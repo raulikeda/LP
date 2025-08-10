@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -237,7 +237,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
     
   </span>
   
@@ -323,9 +323,18 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#requisitos-do-roteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos do Roteiro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tarefas-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
-      Tarefas do Roteiro:
+      Tarefas do Roteiro
     </span>
   </a>
   
@@ -334,25 +343,16 @@
           <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
-      Base de Testes:
+      Base de Testes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fazendo-releases-no-git" class="md-nav__link">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Fazendo Releases no Git
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
-    <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
   
@@ -593,9 +593,18 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#requisitos-do-roteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos do Roteiro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tarefas-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
-      Tarefas do Roteiro:
+      Tarefas do Roteiro
     </span>
   </a>
   
@@ -604,25 +613,16 @@
           <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
-      Base de Testes:
+      Base de Testes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fazendo-releases-no-git" class="md-nav__link">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Fazendo Releases no Git
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
-    <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
   
@@ -655,36 +655,42 @@
 <ol>
 <li>Iniciar a construção de um compilador.</li>
 </ol>
-<h3 id="tarefas-do-roteiro">Tarefas do Roteiro:</h3>
+<h3 id="requisitos-do-roteiro">Requisitos do Roteiro</h3>
+<p>O seu programa irá receber um texto de entrada e deverá processar a operação correspondente ao significado do texto. A entrada irá conter apenas números naturais, + (soma) e - (subtração). É possível haver múltiplicas operações na mesma entrada.</p>
+<p>A entrada pode conter um número indefinido de espaços. Estes devem ser ignorados.</p>
+<p>O seu programa deve imprimir apenas o número de saída e nenhuma mensagem ou texto adicional.</p>
+<p>Caso a entrada não esteja de acordo com a especificação acima, o seu programa precisa emitir um <code>Exception</code> e encerrar sinalizando no <code>stderr</code> (ou seja, <strong>não</strong> capturar o erro com <code>try/catch</code>).</p>
+<p>Exemplos:
+* A entrada: <code>'1+1'</code> deve imprimir o valor <code>2</code>
+* A entrada: <code>'1+  2 -3'</code> deve imprimir o valor <code>0</code>
+* A entrada: <code>'+'</code> deve sair com uma <code>Exception</code></p>
+<h3 id="tarefas-do-roteiro">Tarefas do Roteiro</h3>
 <ol>
-<li>Construir um programa que recebe como argumento uma cadeia de somas e subtrações de números inteiros de múltiplos dígitos. Ao final deve exibir o resultado da operação.</li>
-<li>Escolher uma linguagem orientada a objetos, com recursão e com dicionários.</li>
-<li>Montar um repositório <strong>privado</strong> no GitHub. Adicionar o professor como colaborador.</li>
-<li>Receber o argumento na chamada do programa como <em>string</em>. Por exemplo:</li>
+<li>Construir um programa chamado <code>main.py</code> (caso você escolheu Python para construir o seu compilador)</li>
+<li>O programa deve receber um argumento na chamada do programa como <em>string</em> (<strong>COM ASPAS</strong>). Por exemplo:<br />
+<div class="highlight"><pre><span></span><code>  $ python3 main.py &#39;1 + 1&#39;
+</code></pre></div></li>
+<li>Testar localmente primeiro antes de submeter para a tag!</li>
 </ol>
-<pre><code>  $ python main.py '1+1'
-</code></pre>
-<h3 id="base-de-testes">Base de Testes:</h3>
-<pre><code>  &gt;&gt; 1+2
-  &gt;&gt; 3-2
-  &gt;&gt; 11+22-33
-  &gt;&gt; 789   +345  -    123
-</code></pre>
-<h3 id="fazendo-releases-no-git">Fazendo <em>Releases</em> no Git</h3>
-<p>Para realizar a entrega do código da versão atual, você deve fazer um <em>release</em> da versão no Git. Para tal, é necessário acrescentar uma <em>tag</em> e realizar um <em>commit</em> específico.\
-No exemplo abaixo, como esse roteiro implementa a versão 0.1.x do compilador, utilizaremos os seguintes comandos:</p>
-<pre><code>$ git tag -a v0.1.1 -m &quot;Mensagem sobre o release&quot;
-$ git push origin v0.1.1
-
-# Para selecionar a versão (note que não é um branch):
-$ git checkout v0.1.1
-</code></pre>
-<p>Atenção: Só é possível colocar uma <em>tag</em> apenas uma vez, portanto solte o <em>release</em> quando houver acabado apenas. Caso precise soltar uma correção, utilize um incremento no número do <em>build</em>, por exemplo 0.1.2, 0.1.3, etc.\
-MAS nunca deixe de realizar <em>commit</em> e <em>push</em> a cada modificação.</p>
-<h3 id="questionario">Questionário</h3>
+<h3 id="base-de-testes">Base de Testes</h3>
+<p>Para auxiliar com os testes locais, experimentar as entradas abaixo.</p>
+<p>Sem erros:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+2
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">3</span>-2
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">11</span>+22-33
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">789</span><span class="w">   </span>+345<span class="w">  </span>-<span class="w">    </span><span class="m">123</span>
+</code></pre></div></p>
+<p>Com erros:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span>&gt;&gt;<span class="w"> </span>+1
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+
+</code></pre></div></p>
+<h3 id="exercicios-adicionais">Exercícios Adicionais</h3>
 <ol>
+<li>Como você acrescentaria a multiplicação e divisão no seu código. </li>
+<li>Como você acrescentaria parênteses ao seu código. </li>
 <li>Explique como foi feito para reconhecer múltiplos dígitos e realizar múltiplas operações.</li>
-<li>Pense na estrutura de alguma linguagem procedural (C por exemplo), indique com detalhes como você expandiria o seu programa para compilar um programa nessa linguagem.</li>
+<li>Pense na estrutura de alguma linguagem procedural (<code>C</code>, por exemplo), indique com detalhes como você expandiria o seu programa para compilar um programa nessa linguagem.</li>
 </ol>
 
 
@@ -734,10 +740,10 @@ MAS nunca deixe de realizar <em>commit</em> e <em>push</em> a cada modificação
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
