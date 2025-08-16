@@ -1,0 +1,8 @@
+/* limit selector as you like */
+/* sanity check */
+
+.md-typeset img[src*="blockdiag"] {
+  background: #fff;            /* or var(--md-code-bg-color) */
+  border-radius: .25rem;
+  padding: .25rem;
+}
