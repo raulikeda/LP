@@ -6,3 +6,16 @@
   border-radius: .25rem;
   padding: .25rem;
 }
+
+/* Works both locally and on Pages */
+.md-typeset .blockdiag {
+  background: #fff;
+  border-radius: .25rem;
+  padding: .25rem;
+  display: inline-block;
+}
+.md-typeset .blockdiag img,
+.md-typeset .blockdiag object,
+.md-typeset .blockdiag svg {
+  display: block;   /* remove baseline gap */
+}
