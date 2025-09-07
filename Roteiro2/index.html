@@ -356,10 +356,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Entrega: 28/Aug/2025 às 07h15">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       Objetivos
@@ -367,15 +366,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#requisitos-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
       Requisitos do Roteiro
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Requisitos do Roteiro">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#sobre-as-mensagens-de-erro" class="md-nav__link">
@@ -386,7 +386,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sobre-classes-e-objetos" class="md-nav__link">
     <span class="md-ellipsis">
       Sobre Classes e Objetos
@@ -394,8 +399,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas:
@@ -403,8 +408,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
@@ -412,18 +417,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -622,10 +622,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Entrega: 28/Aug/2025 às 07h15">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       Objetivos
@@ -633,15 +632,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#requisitos-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
       Requisitos do Roteiro
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Requisitos do Roteiro">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#sobre-as-mensagens-de-erro" class="md-nav__link">
@@ -652,7 +652,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sobre-classes-e-objetos" class="md-nav__link">
     <span class="md-ellipsis">
       Sobre Classes e Objetos
@@ -660,8 +665,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas:
@@ -669,8 +674,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
@@ -678,18 +683,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -711,12 +711,12 @@
 
 <h1 id="roteiro-2-v10">Roteiro 2 - <strong>v1.0</strong></h1>
 <h2 id="entrega-28aug2025-as-07h15">Entrega: 28/Aug/2025 às 07h15</h2>
-<h3 id="objetivos">Objetivos</h3>
+<h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Reestruturar o compilador para o modelo visto em aula.</li>
 <li>Implementar a separação de fases.</li>
 </ol>
-<h3 id="requisitos-do-roteiro">Requisitos do Roteiro</h3>
+<h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>Você irá implementar a análise léxica e a análise sintática através de duas classes diferentes: <code>Lexer</code> e <code>Parser</code>. </p>
 <p>A análise léxica ocorrerá na classe <code>Lexer</code>. Ela armazenará o código de entrada no atributo <code>source</code> e realizará a tokenização através do método <code>selectNext()</code>. O metódo irá preencher o atributo <code>next</code> com um objeto do tipo <code>Token</code>.</p>
 <p>Haverá 4 tokens diferentes disponíveis:</p>
@@ -765,7 +765,7 @@
 <h3 id="sobre-as-mensagens-de-erro">Sobre as mensagens de erro</h3>
 <p>Coloquem mensagens de erro que façam sentido. Coloquem também a fonte do erro. Isso irá facilitar a depuração no futuro.</p>
 <p>Por exemplo: <code>[Parser] Unexpected token PLUS</code> ou <code>[Lexer] Invalid Symbol $</code></p>
-<h3 id="sobre-classes-e-objetos">Sobre Classes e Objetos</h3>
+<h2 id="sobre-classes-e-objetos">Sobre Classes e Objetos</h2>
 <p>Caso você não recorde, segue uma breve revisão de OOP (Object Oriented Programming) em Python.</p>
 <p>Para criar uma classe em Python, você utiliza a seguinte estrutura:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
@@ -834,7 +834,7 @@
 <p>Como explicado, atributos estáticos são compartilhados entre todos e atributos dinâmicos são específicos da instância. Essa implementação pode ser úteis em alguns casos, principalmente em arquiteturas <em>singletons</em>.</p>
 <p>Um último conceito importante na disciplina são as Classes Abstratas. Apesar do Python não implementar essa <em>feature</em>, significa simplesmente de que não deveria ser possível construir objetos da classe, apenas herdá-la.</p>
 <p>Apesar do Python não implementar OOP plenamente, há outras características que valem a pena uma profunda revisão para relembrar os conceitos fundamentais, como <code>properties</code>, <code>overloading</code>, <code>interfaces</code>, etc.</p>
-<h3 id="tarefas">Tarefas:</h3>
+<h2 id="tarefas">Tarefas:</h2>
 <ol>
 <li>Colocar o Diagrama Sintático no README do GitHub.</li>
 <li>Criar uma Classe <strong>Token</strong> com 2 atributos:<ul>
@@ -857,7 +857,7 @@
 </li>
 <li>O main() do compilador deve chamar o método Parser.run() e imprimir o retorno do método.</li>
 </ol>
-<h3 id="base-de-testes">Base de Testes:</h3>
+<h2 id="base-de-testes">Base de Testes:</h2>
 <p>Sem erros:
 <div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+2
 <span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">3</span>-2
@@ -869,7 +869,7 @@
 <span class="w">  </span>&gt;&gt;<span class="w"> </span>+1
 <span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+
 </code></pre></div></p>
-<h3 id="questionario">Questionário</h3>
+<h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
 <ol>
 <li>Nosso compilador é de 1 passagem ou múltiplas passagens? Justifique.</li>
 <li>Esboce como você implementaria as operações de MULTIPLICAÇÃO e DIVISÃO. Veja os testes:

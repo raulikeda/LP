@@ -378,10 +378,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Entrega: 04/Sep/2025 às 07h15">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       Objetivos
@@ -389,8 +388,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#requisitos-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
       Requisitos do Roteiro
@@ -431,8 +430,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas:
@@ -440,8 +439,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
@@ -449,18 +448,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -637,10 +631,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Entrega: 04/Sep/2025 às 07h15">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       Objetivos
@@ -648,8 +641,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#requisitos-do-roteiro" class="md-nav__link">
     <span class="md-ellipsis">
       Requisitos do Roteiro
@@ -690,8 +683,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas:
@@ -699,8 +692,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
@@ -708,18 +701,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#questionario" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Questionário
+      Exercícios Adicionais
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -741,12 +729,12 @@
 
 <h1 id="roteiro-3-v11">Roteiro 3 - <strong>v1.1</strong></h1>
 <h2 id="entrega-04sep2025-as-07h15">Entrega: 04/Sep/2025 às 07h15</h2>
-<h3 id="objetivos">Objetivos</h3>
+<h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Implementar operação de MULT e DIV.</li>
 <li>Implementar operadores unários e parênteses.</li>
 </ol>
-<h3 id="requisitos-do-roteiro">Requisitos do Roteiro</h3>
+<h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>Para implementar os novos operadores e parênteses serão criados dois novos diagramas: <code>TERM</code> e <code>FACTOR</code>. </p>
 <p><code>EXPRESSION</code> irá realizar a chamada de <code>TERM</code>, que por sua vez chamará <code>FACTOR</code>. Isso criará a precedência necessária, onde o diagrama mais interno terá maior prioridade.</p>
 <p>Para realizar a "chamada" de um diagrama, usa-se um retângulo, em oposição ao consumo de tokens (representado por círculos). Veja o diagrama abaixo:</p>
@@ -761,7 +749,7 @@
 <span class="k">NUMBER </span><span class="o">=</span> <span class="k">DIGIT</span><span class="p">,</span> <span class="p">{</span><span class="k">DIGIT</span><span class="p">}</span> <span class="p">;</span>
 <span class="k">DIGIT </span><span class="o">=</span> <span class="err">0</span> <span class="p">|</span> <span class="err">1</span> <span class="p">|</span> <span class="p">.</span><span class="err">..</span> <span class="err">|</span> <span class="err">9</span> <span class="err">;</span>
 </code></pre></div>
-<h4 id="lexer">Lexer</h4>
+<h3 id="lexer">Lexer</h3>
 <p>Haverá 4 novos tokens:</p>
 <ul>
 <li>(<code>MULT</code>, '*') - representa o símbolo *</li>
@@ -770,7 +758,7 @@
 <li>(<code>CLOSE_PAR</code>, ')') - representa o símbolo )</li>
 </ul>
 <p>Os operadores unários utilizarão a mesma nomenclatura dos binários.</p>
-<h4 id="parser">Parser</h4>
+<h3 id="parser">Parser</h3>
 <p>Serão criados dois novos métodos estáticos:</p>
 <ul>
 <li><code>parseTerm()</code> - implementa o diagrama <code>TERM</code></li>
@@ -783,19 +771,19 @@
 <li><code>lex.selectNext()</code> no início do parseExpression()</li>
 </ul>
 <p>Precisa corrigir isso antes de avançar. Releia o roteiro anterior.</p>
-<h4 id="semantico">Semântico</h4>
+<h3 id="semantico">Semântico</h3>
 <p>Todas as funções do <code>Parser</code> mantém uma variável local de resultado que vai atualizando conforme o diagrama é percorrido. Ao final deve-se retornar o valor dessa variável. <strong>NÃO</strong> usar uma variável global.</p>
 <div class="admonition attention">
 <p class="admonition-title">Atenção</p>
 <p>Ao realizar a divisão, utilize sempre a divisão inteira. Ou seja, o resultado da divisão será sempre do tipo Integer.</p>
 </div>
-<h3 id="tarefas">Tarefas:</h3>
+<h2 id="tarefas">Tarefas:</h2>
 <ol>
 <li>Atualizar o Diagrama Sintático e a EBNF no README do GitHub.</li>
 <li>Implementar os novos tokens no <code>Lexer</code></li>
 <li>Implementar os novos métodos no <code>Parser</code> conforme os diagramas.</li>
 </ol>
-<h3 id="base-de-testes">Base de Testes:</h3>
+<h2 id="base-de-testes">Base de Testes:</h2>
 <div class="highlight"><pre><span></span><code><span class="n">Sem</span><span class="w"> </span><span class="n">erros</span><span class="o">:</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3-2</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span>
@@ -807,14 +795,14 @@
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">-2</span><span class="o">/</span><span class="mi">4</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
 <span class="n">Com</span><span class="w"> </span><span class="n">erros</span><span class="o">:</span>
-<span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">+</span><span class="mi">3</span>
+<span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">*</span><span class="mi">3</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3</span><span class="o">+</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3</span><span class="o">*/</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span>
 <span class="w">  </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="questionario">Questionário</h3>
+<h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
 <ol>
 <li>O que é uma árvore de derivação. Como isso se relaciona com gramáticas ambíguas?</li>
 <li>Qual a diferença da notação Prefix, Infix e Postfix?</li>
