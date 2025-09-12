@@ -950,6 +950,10 @@
 <h3 id="parser">Parser</h3>
 <p>O novo diagrama sintático será:</p>
 <p><img alt="center" src="../images/cap2.1-ds-full.png" /></p>
+<div class="admonition atenção">
+<p class="admonition-title">Atenção</p>
+<p>Na figura é preciso adaptar o token ";" para o correspondente na linguagem compilada do semestre.</p>
+</div>
 <p>Logo, serão criadas duas novas funções na classe <code>Parser</code>:</p>
 <ul>
 <li><code>parseProgram()</code>: será o novo ponto de início da análise sintática, substituindo a chamada do <code>parseExpresion()</code> no método <code>run()</code>. Ele irá realizar um <em>loop</em> enquanto não atingir o token <code>EOF</code>. A cada iteração, irá realizar a chamada do <code>parseStatement()</code>, armazenando as sub-árvores retornadas como filhos de um nó <code>Block</code>.</li>
