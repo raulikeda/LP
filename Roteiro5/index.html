@@ -908,7 +908,7 @@
 <h3 id="tabela-de-simbolos">Tabela de Símbolos</h3>
 <p>As variáveis e seus respectivos valores vão ser armazenados na Tabela de Símbolos (<code>SymbolTable</code> ou <code>ST</code>). Além dos valores, também utilizaremos a tabela para armazenar outras características da variável no futuro (exemplo: tipo do dado, somente leitura, etc).</p>
 <p>A <code>SymbolTable</code> será uma classe com 1 atributo <code>table</code> do tipo <code>Dict&lt;String: Variable&gt;</code>. Esse atributo funcionará como uma propriedade (<code>property</code>), logo implementaremos um <code>getter</code> e um <code>setter</code> para ele.</p>
-<p>Já a classe <code>Variable</code> servirá apenas como um <em>wrapper</em> de dados com as características de uma variável. Por enquantoVamos implementar apenas 1 atributo: <code>value: string</code>.</p>
+<p>Já a classe <code>Variable</code> servirá apenas como um <em>wrapper</em> de dados com as características de uma variável. Por enquantoVamos implementar apenas 1 atributo: <code>value: int</code>.</p>
 <p>Durante a busca do valor, o método correspondente deve retornar um erro caso a variável não exista.</p>
 <h3 id="ajustes-na-ast">Ajustes na AST</h3>
 <p>Antes de implementar as novas <em>features</em> da linguagem, será realizado um pequeno ajuste no método <code>evaluate()</code> da classe <code>Node</code>.</p>
