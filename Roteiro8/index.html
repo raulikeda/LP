@@ -239,29 +239,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../APS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    APS
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/1
     
   </span>
   
@@ -482,9 +460,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-28oct2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-23apr2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 28/Oct/2025 às 07h15
+      Entrega: 23/Apr/2026 às 07h15
     </span>
   </a>
   
@@ -572,6 +550,15 @@
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
     </span>
   </a>
   
@@ -643,9 +630,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-28oct2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-23apr2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 28/Oct/2025 às 07h15
+      Entrega: 23/Apr/2026 às 07h15
     </span>
   </a>
   
@@ -739,6 +726,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#questionario" class="md-nav__link">
     <span class="md-ellipsis">
       Questionário
@@ -764,22 +760,22 @@
 
 
 <h1 id="roteiro-8-v30">Roteiro 8 - <strong>v3.0</strong></h1>
-<h2 id="entrega-28oct2025-as-07h15">Entrega: 28/Oct/2025 às 07h15</h2>
+<h2 id="entrega-23apr2026-as-07h15">Entrega: 23/Apr/2026 às 07h15</h2>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Geração de Código</li>
 </ol>
 <h2 id="exemplo-de-codigo">Exemplo de Código:</h2>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="nx">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Scanln</span><span class="p">()</span>
-<span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span>
-<span class="w">  </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanf</span><span class="p">();</span>
+<span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="mesmo-exemplo-em-assembly-nasm-gerado-pelo-compilador">Mesmo exemplo em Assembly NASM (gerado pelo compilador):</h2>
 <div class="highlight"><pre><span></span><code><span class="nf">section</span><span class="w"> </span><span class="no">.data</span>
@@ -993,7 +989,7 @@
 <li>Print</li>
 <li>Scan</li>
 <li>Você pode aproveitar as subrotinas do código de apoio do exemplo acima (condicionais) publicadas no Blackboard</li>
-<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.go sai teste.asm</li>
+<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.c sai teste.asm</li>
 <li>Para montar o código e transformá-lo em executável x86 + Linux (<strong>versão do Servidor</strong>):</li>
 </ul>
 <div class="highlight"><pre><span></span><code>$ nasm -f elf32 -o program.o program.asm
@@ -1007,6 +1003,13 @@ $ gcc -m32 -no-pie -nostartfiles -o program.exe program.obj -e _start
 </code></pre></div>
 <p>Para mais informações: https://en.wikipedia.org/wiki/Executable_and_Linkable_Format</p>
 <p>Em caso de problemas com o assembly, use o <strong>gdb</strong>.</p>
+<h2 id="extra-credit">Extra Credit</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Implementar a geração de código Assembly de funções (v2.3). Assim como esse roteiro, desconsiderar <em>strings</em>. </p>
+<p>Uma função é basicamente um procedimento (bloco de coódigo) em Assembly. Ao iniciar a função, deve-se zerar o <code>EBP</code> e o <code>ESP</code>. Antes de retornar, deve-se reestabelecer esses registradores. </p>
+<p>Os argumentos da função serão passados na pilha. Para acessar os argumentos, usa-se o endereço <code>[EBP+N]</code> (lembre-se que o EBP foi zerado). Atenção: <code>[EBP+4]</code> é o endereço de retorno da função e muito cuidado com a ordem de empilhamento e leitura dos argumentos (é uma pilha).</p>
+</div>
 <h2 id="questionario">Questionário</h2>
 <ol>
 <li>Você deve ter percebido que o código é bem estruturado mas pouco eficiente. Proponha otimizações na geração de código.</li>

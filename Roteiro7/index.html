@@ -239,29 +239,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../APS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    APS
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/1
     
   </span>
   
@@ -460,9 +438,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-16oct2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-14apr2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 16/Oct/2025 às 07h15
+      Entrega: 14/Apr/2026 às 07h15
     </span>
   </a>
   
@@ -550,6 +528,15 @@
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
     </span>
   </a>
   
@@ -643,9 +630,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-16oct2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-14apr2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 16/Oct/2025 às 07h15
+      Entrega: 14/Apr/2026 às 07h15
     </span>
   </a>
   
@@ -739,6 +726,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#questionario" class="md-nav__link">
     <span class="md-ellipsis">
       Questionário
@@ -764,7 +760,7 @@
 
 
 <h1 id="roteiro-7-v22">Roteiro 7 - <strong>v2.2</strong></h1>
-<h2 id="entrega-16oct2025-as-07h15">Entrega: 16/Oct/2025 às 07h15</h2>
+<h2 id="entrega-14apr2026-as-07h15">Entrega: 14/Apr/2026 às 07h15</h2>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Aprimorar a estrutura de programa</li>
@@ -776,10 +772,10 @@
 <h3 id="lexer">Lexer</h3>
 <p>Adicionar os novos tokens:</p>
 <ul>
-<li><code>var</code> - token <code>VAR</code></li>
+<li><code>` - token</code>VAR`</li>
 <li><code>true</code>, <code>false</code> - token <code>BOOL</code></li>
 <li>Valores string: separar todo o conteúdo entre aspas. Declarar um token tipo <code>STR</code></li>
-<li><code>string</code>, <code>int</code>, <code>bool</code> - token <code>TYPE</code></li>
+<li><code>,</code>, <code>` - token</code>TYPE`</li>
 </ul>
 <h3 id="symboltable">SymbolTable</h3>
 <p>Será preciso adicionar um novo atributo na classe <code>Variable</code>, chamado <code>type</code>. Alterar o construtor para preencher esse atributo na inicialização.</p>
@@ -812,6 +808,16 @@
 <li>operar tipos incorretos.</li>
 <li>testar um if/while com uma string de entrada.</li>
 </ul>
+<h2 id="extra-credit">Extra Credit</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Implementar a operação de <em>casting</em>. Ele é um operador unário que possui a maior prioridade, apenas atrás do parênteses. O tipo a ser convertido será sinalizado na estrutura do operador. Implementar também números do tipo <em>float</em>. Será possível realizar operações entre <em>int</em> e <em>float</em> livremente, mas o resultado será sempre <em>float</em> quando incluir um número <em>float</em> na operação.</p>
+<p>Segue um exemplo abaixo:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Converts to 2 (INT) and assign to x</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w">  </span><span class="c1">// z receives 3.6 (FLOAT)</span>
+</code></pre></div></p>
+</div>
 <h2 id="questionario">Questionário</h2>
 <ol>
 <li>Proponha uma implementação de <em>float</em>.</li>

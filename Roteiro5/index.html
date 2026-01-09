@@ -239,29 +239,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas - 2025/2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../APS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    APS
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/1
     
   </span>
   
@@ -416,9 +394,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-18sep2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-24mar2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 18/Sep/2025 às 07h15
+      Entrega: 24/Mar/2026 às 07h15
     </span>
   </a>
   
@@ -560,6 +538,15 @@
   <a href="#base-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       Base de Testes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
     </span>
   </a>
   
@@ -697,9 +684,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-18sep2025-as-07h15" class="md-nav__link">
+  <a href="#entrega-24mar2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 18/Sep/2025 às 07h15
+      Entrega: 24/Mar/2026 às 07h15
     </span>
   </a>
   
@@ -847,6 +834,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercicios-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
       Exercícios Adicionais
@@ -872,7 +868,7 @@
 
 
 <h1 id="roteiro-5-v20">Roteiro 5 - <strong>v2.0</strong></h1>
-<h2 id="entrega-18sep2025-as-07h15">Entrega: 18/Sep/2025 às 07h15</h2>
+<h2 id="entrega-24mar2026-as-07h15">Entrega: 24/Mar/2026 às 07h15</h2>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Implementar variáveis (<em>identifier</em>) e tabela de símbolos.</li>
@@ -885,7 +881,7 @@
 <h3 id="leitura-do-arquivo">Leitura do arquivo</h3>
 <p>Vamos substituir a entrada de código direto em <code>argv</code> pelo nome de um arquivo em formato texto.</p>
 <p>Agora a entrada esperada é:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span>teste.go
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span>teste.c
 </code></pre></div>
 <p>Portanto, você deve abrir e ler o código no nome do arquivo de entrada antes de realizar a compilação.</p>
 <h3 id="comentarios">Comentários</h3>
@@ -896,10 +892,10 @@
 <p>Dica: opte por usar <code>regex</code> para a filtragem.</p>
 <p>Antes:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Este é um comentário</span>
-<span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 <p>Depois:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 <div class="admonition atenção">
 <p class="admonition-title">ATENÇÃO</p>
@@ -918,7 +914,7 @@
 <p>Alguns novos símbolos serão incorporados ao alfabeto e precisam ser tratados no <code>Lexer</code>. Segue a lista:</p>
 <ul>
 <li>"=" (<code>ASSIGN</code>)</li>
-<li>"\n" (<code>END</code>)</li>
+<li>";" (<code>END</code>)</li>
 <li><code>Identifier</code>: será tratado de forma análoga aos números. Se você achar alguma letra (maiúscula ou minúscula), irá iterar até deixar de ser uma letra, número ou "_" (<em>underscore</em>). A <em>string</em> concatenada será declarada como <code>Token</code> do tipo <code>IDEN</code>.</li>
 </ul>
 <p>Exemplos de variáveis válidas:</p>
@@ -988,6 +984,18 @@
 <li>variáveis inválidas</li>
 <li>uso de variáveis inexistentes</li>
 </ul>
+<h2 id="extra-credit">Extra Credit</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Implementar constantes e variáveis imutáveis no compilador. Constantes são resolvidos durante o Preprocessamento com substituição direta (logo o símbolo que representa a constante deixará de existir antes da etapa léxica). Variáveis imutáveis funcionam iguais às variáveis tradicionais, porém não podem ter o seu valor alterado durante a execução (isso implica que deve haver a inicialização durante a declaração).</p>
+<p>Segue um exemplo abaixo:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cp">#define N 1      </span><span class="c1">// Constant N</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Immutable variable x</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w">       </span><span class="c1">// This is actually: printf(1);</span>
+<span class="w">  </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">// Error: this is 1 = 1 (invalid)</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">           </span><span class="c1">// Error: cannot change the value of x</span>
+</code></pre></div></p>
+</div>
 <h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
 <ol>
 <li>Proponha a implementação da estrutura SE/ENTÃO (<em>if/else</em>).</li>
