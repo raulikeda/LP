@@ -834,7 +834,7 @@
 <ol>
 <li>Colocar o Diagrama Sintático no README do GitHub.</li>
 <li>Criar uma Classe <strong>Token</strong> com 2 atributos:<ul>
-<li><code>kind</code>: string. É o tipo do token</li>
+<li><code>type</code>: string. É o tipo do token</li>
 <li><code>value</code>: integer | string. É o valor do token</li>
 </ul>
 </li>
@@ -846,9 +846,9 @@
 </ul>
 </li>
 <li>Criar uma Classe <strong>Parser</strong> com 1 atributo e 2 métodos (<strong>estáticos</strong>):<ul>
-<li><code>lex</code>: Lexer. Objeto da classe que irá ler o código fonte e alimentar o Parser.</li>
+<li><code>lexer</code>: Lexer. Objeto da classe que irá ler o código fonte e alimentar o Parser.</li>
 <li><code>parseExpression(): int</code>: consome os tokens do Lexer e analisa se a sintaxe está aderente à gramática proposta. retorna o resultado numérico da expressão analisada.</li>
-<li><code>run(code: string): int</code>: recebe o código fonte como argumento, inicializa um objeto Lexer em <code>lex</code>, posiciona no primeiro token e retorna o resultado do <code>parseExpression()</code>. Ao final verificar se terminou de consumir toda a cadeia (o token deve ser <code>EOF</code>).</li>
+<li><code>run(code: string): int</code>: recebe o código fonte como argumento, inicializa um objeto Lexer em <code>lexer</code>, posiciona no primeiro token e retorna o resultado do <code>parseExpression()</code>. Ao final verificar se terminou de consumir toda a cadeia (o token deve ser <code>EOF</code>).</li>
 </ul>
 </li>
 <li>O main() do compilador deve chamar o método Parser.run() e imprimir o retorno do método.</li>

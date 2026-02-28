@@ -763,8 +763,8 @@
 <p>Aplicar o mesmo algoritmo usado no roteiro passado, exceto que retângulos representam a chamada da função que representa o diagrama alvo.</p>
 <p><strong>SE você implementa:</strong></p>
 <ul>
-<li><code>while kind != 'EOF'</code> no parseExpression()</li>
-<li><code>lex.selectNext()</code> no início do parseExpression()</li>
+<li><code>while type != 'EOF'</code> no parseExpression()</li>
+<li><code>lexer.selectNext()</code> no início do parseExpression()</li>
 </ul>
 <p>Precisa corrigir isso antes de avançar. Releia o roteiro anterior.</p>
 <h3 id="semantico">Semântico</h3>
@@ -775,7 +775,12 @@
 </div>
 <h2 id="tarefas">Tarefas:</h2>
 <ol>
-<li>Atualizar o Diagrama Sintático e a EBNF no README do GitHub.</li>
+<li>Atualizar o Diagrama Sintático e a EBNF no README do GitHub. Colocar a EBNF no formato: <blockquote>
+<p>```ebnf</p>
+<p>Coloque a EBNF AQUI</p>
+<p>```</p>
+</blockquote>
+</li>
 <li>Implementar os novos tokens no <code>Lexer</code></li>
 <li>Implementar os novos métodos no <code>Parser</code> conforme os diagramas.</li>
 </ol>
