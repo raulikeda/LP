@@ -766,16 +766,16 @@
 <li>Geração de Código</li>
 </ol>
 <h2 id="exemplo-de-codigo">Exemplo de Código:</h2>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanf</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">n</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">f</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanln</span><span class="o">!</span><span class="p">();</span>
 <span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 <span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n">printf</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="fm">println!</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="mesmo-exemplo-em-assembly-nasm-gerado-pelo-compilador">Mesmo exemplo em Assembly NASM (gerado pelo compilador):</h2>
 <div class="highlight"><pre><span></span><code><span class="nf">section</span><span class="w"> </span><span class="no">.data</span>
@@ -989,7 +989,7 @@
 <li>Print</li>
 <li>Scan</li>
 <li>Você pode aproveitar as subrotinas do código de apoio do exemplo acima (condicionais) publicadas no Blackboard</li>
-<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.c sai teste.asm</li>
+<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.rs sai teste.asm</li>
 <li>Para montar o código e transformá-lo em executável x86 + Linux (<strong>versão do Servidor</strong>):</li>
 </ul>
 <div class="highlight"><pre><span></span><code>$ nasm -f elf32 -o program.o program.asm
