@@ -877,6 +877,13 @@
 <li>Implementar Comentários.</li>
 </ol>
 <h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
+<p>A meta do Roteiro é conseguir interpretar o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Comentário!</span>
+<span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">z_final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="fm">println!</span><span class="p">(</span><span class="n">z_final</span><span class="p">);</span>
+</code></pre></div>
 <p>Esse roteiro será dividido em pequenas tarefas, cada uma implementando uma nova funcionalidade no compilador.</p>
 <h3 id="leitura-do-arquivo">Leitura do arquivo</h3>
 <p>Vamos substituir a entrada de código direto em <code>argv</code> pelo nome de um arquivo em formato texto.</p>
@@ -906,6 +913,7 @@
 <p>A <code>SymbolTable</code> será uma classe com 1 atributo <code>table</code> do tipo <code>Dict&lt;String: Variable&gt;</code>. Esse atributo funcionará como uma propriedade (<code>property</code>), logo implementaremos um <code>getter</code> e um <code>setter</code> para ele.</p>
 <p>Já a classe <code>Variable</code> servirá apenas como um <em>wrapper</em> de dados com as características de uma variável. Por enquantoVamos implementar apenas 1 atributo: <code>value: int</code>.</p>
 <p>Durante a busca do valor, o método correspondente deve retornar um erro caso a variável não exista.</p>
+<p>Todo erro disparado na <code>SymbolTable</code> precisa ter o prefixo: <code>[Semantic]</code>.</p>
 <h3 id="ajustes-na-ast">Ajustes na AST</h3>
 <p>Antes de implementar as novas <em>features</em> da linguagem, será realizado um pequeno ajuste no método <code>evaluate()</code> da classe <code>Node</code>.</p>
 <p>Você precisa adicionar um argumento <code>st</code> do tipo <code>SymbolTable</code>. Consequentemente, todos os outros nós (<code>IntVal</code>, <code>UnOp</code> e <code>BinOp</code>) que herdam <code>Node</code>, precisam alterar a sua assinatura. Será preciso ajustar as chamadas da função <code>evaluate()</code> dos filhos (<code>children</code>).</p>
@@ -989,11 +997,11 @@
 <p class="admonition-title">Question</p>
 <p>Implementar constantes e variáveis imutáveis no compilador. Constantes são resolvidos durante o Preprocessamento com substituição direta (logo o símbolo que representa a constante deixará de existir antes da etapa léxica). Variáveis imutáveis funcionam iguais às variáveis tradicionais, porém não podem ter o seu valor alterado durante a execução (isso implica que deve haver a inicialização durante a declaração).</p>
 <p>Segue um exemplo abaixo:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cp">#define N 1      </span><span class="c1">// Constant N</span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Immutable variable x</span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w">       </span><span class="c1">// This is actually: printf(1);</span>
-<span class="w">  </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">// Error: this is 1 = 1 (invalid)</span>
-<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">           </span><span class="c1">// Error: cannot change the value of x</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// Constant N</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">        </span><span class="c1">// Immutable variable x</span>
+<span class="fm">println!</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w">      </span><span class="c1">// This is actually: print(1);</span>
+<span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">            </span><span class="c1">// Parser Error: this is 1 = 1 [invalid]</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">            </span><span class="c1">// Semantic Error: cannot change the value of x</span>
 </code></pre></div></p>
 </div>
 <h2 id="exercicios-adicionais">Exercícios Adicionais</h2>

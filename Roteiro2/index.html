@@ -760,6 +760,11 @@
 </div>
 <h3 id="sobre-as-mensagens-de-erro">Sobre as mensagens de erro</h3>
 <p>Coloquem mensagens de erro que façam sentido. Coloquem também a fonte do erro. Isso irá facilitar a depuração no futuro.</p>
+<p>Atualmente teremos erros com os prefixos:</p>
+<ul>
+<li><code>[Parser]</code> para erros disparados na classe Parser</li>
+<li><code>[Lexer]</code> para erros disparados na classe Lexer</li>
+</ul>
 <p>Por exemplo: <code>[Parser] Unexpected token PLUS</code> ou <code>[Lexer] Invalid Symbol $</code></p>
 <h2 id="sobre-classes-e-objetos">Sobre Classes e Objetos</h2>
 <p>Caso você não recorde, segue uma breve revisão de OOP (Object Oriented Programming) em Python.</p>
@@ -866,6 +871,10 @@
 <span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+
 </code></pre></div></p>
 <h2 id="extra-credit">Extra Credit</h2>
+<p>Antes de executar a tarefa, sugere-se criar uma branch separada para os exercícios. Você pode criar usando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>extra<span class="w"> </span>v1.0.X
+</code></pre></div>
+<p>Assim, toda vez que você terminar um roteiro principal, basta dar um <em>merge</em> na branch extra e executar o exercício.</p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Implementar a operação de XOR entre números inteiros. XOR tem a mesma precedência de + e -, logo a operação será realizada por ordem de chegada. O símbolo que representa o operador é o <code>^</code>.</p>

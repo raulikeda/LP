@@ -747,6 +747,14 @@
 <ol>
 <li>Implementar a árvore sintática abstrata (AST)</li>
 </ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Se você não desenvolveu os extras em uma branch separada. Vai precisar criar uma branch a partir da última versão (v1.1.X) bem sucedida:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch_name<span class="w"> </span>v1.1.X
+</code></pre></div>
+<p>Não se esqueça de dar <em>merge</em> na main quando acabar.</p>
+<p>A partir desse roteiro, crie uma branch extra antes de realizar o <em>extra credit</em>. Não se esqueça de dar <em>merge</em> nessa branch quando acabar o roteiro principal.</p>
+</div>
 <h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>Nesse roteiro, a análise semântica será removida de dentro do <code>Parser</code>. Portanto as funções da classe não irão mais manipular números e realizar cálculos diretamente.</p>
 <p>A ideia é durante a análise sintática, será construída a AST (Abstract Syntax Tree), e está será a responsável pela etapa semântica.</p>
@@ -762,6 +770,7 @@
 <p>Em cada nó, haverá um atributo <code>value</code> que guardará o valor correspondente do nó. Por exemplo, um nó BinOp irá armazenar o operador no value, podendo representar <code>+</code>, <code>-</code>, <code>*</code> ou <code>/</code>.</p>
 <p>Por ser uma estrutura em árvore, os nós podem ter filhos, que também serão outros nós. Para guardar essa estrutura, haverá um atributo chamado <code>children</code>, formado por uma lista de nós. Note o número de filhos é variável e depende de cada nó (A árvore NÃO é binária).</p>
 <p>Por fim, haverá um método <code>evaluate()</code> que será onde a etapa semântica acontecerá de fato. Cada nó possuirá a sua própria implementação do método.</p>
+<p>Todo erro disparado em alguma classe herdeira de <code>Node</code> precisa ter o prefixo: <code>[Semantic]</code>.</p>
 <div class="admonition atenção">
 <p class="admonition-title">MUITA ATENÇÃO!!!</p>
 <p><strong>Regra de Ouro</strong>: cada nó cuida apenas da sua vida, não precisa olhar ou interferir nos valores de sucessores ou antecessores. Também não precisa realizar ou antecipar alguma operação na qual não foi designada. Não tentem adivinhar nada!</p>
