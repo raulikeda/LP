@@ -956,8 +956,19 @@
 <p><img alt="center|white" src="../images/H5-ds-full.png" /></p>
 <div class="admonition atenção">
 <p class="admonition-title">Atenção</p>
-<p>Na figura é preciso adaptar o token ";" para o correspondente na linguagem compilada do semestre.</p>
+<p>Na figura é preciso adaptar o token EOL para o correspondente na linguagem compilada do semestre.</p>
 </div>
+<p>A EBNF atualizada será:</p>
+<div class="highlight"><pre><span></span><code>PROGRAM = { STATEMENT } ;
+STATEMENT = ((IDENTIFIER, \&quot;=\&quot;, EXPRESSION) | (PRINT, \&quot;(\&quot;, EXPRESSION, \&quot;)\&quot;) | ε), EOL ;
+EXPRESSION = TERM, { (\&quot;+\&quot; | \&quot;-\&quot;), TERM } ;
+TERM = FACTOR, { (\&quot;*\&quot; | \&quot;/\&quot;), FACTOR } ;
+FACTOR = (\&quot;+\&quot; | \&quot;-\&quot;), FACTOR | \&quot;(\&quot;, EXPRESSION, \&quot;)\&quot; | NUMBER ;
+NUMBER = DIGIT, {DIGIT} ;
+DIGIT = 0 | 1 | ... | 9 ;
+IDENTIFIER = LETTER, {LETTER | DIGIT | \&quot;_\&quot;} ;
+LETTER = a | b | ... | z | A | B | ... | Z ;
+</code></pre></div>
 <p>Logo, serão criadas duas novas funções na classe <code>Parser</code>:</p>
 <ul>
 <li><code>parseProgram()</code>: será o novo ponto de início da análise sintática, substituindo a chamada do <code>parseExpresion()</code> no método <code>run()</code>. Ele irá realizar um <em>loop</em> enquanto não atingir o token <code>EOF</code>. A cada iteração, irá realizar a chamada do <code>parseStatement()</code>, armazenando as sub-árvores retornadas como filhos de um nó <code>Block</code>.</li>
@@ -971,12 +982,13 @@
 <p>Por último, alterar o método <code>parseFactor()</code> para tratar o token <code>IDEN</code>. Criar um nó <code>Identifier</code> com o nome da variável.</p>
 <h2 id="tarefas">Tarefas:</h2>
 <ol>
-<li>Realizar a leitura do conteúdo do arquivo passado no argumento</li>
+<li>Realizar a leitura do conteúdo do arquivo passado no argumento. Adicione um "\n" no final do conteúdo lido.</li>
 <li>Implementar a classe <em>PrePro</em> com uma função <em>filter(code: string): string</em> estática para remover os comentários</li>
 <li>Criar as classes <code>Variable</code> e <code>SymbolTable</code> conforme a especificação acima</li>
 <li>Implementar o argumento <code>st</code> no <code>evaluate()</code> da classe <code>Node</code> e nas classes que herdam <code>Node</code></li>
 <li>Ajustar o <code>Lexer</code> para tratar os novos tokens</li>
 <li>Alterar a <code>main</code> para criar um objeto <code>st</code> antes de iniciar a execução da AST. Passar o objeto como argumento da raiz</li>
+<li>No <code>run</code>, apontar o ínicio da analise léxica para <code>parseProgram()</code>.</li>
 <li>Implementar os novos nós: <code>Identifier</code>, <code>Print</code>, <code>Block</code>, <code>Assignment</code> e <code>NoOp</code></li>
 <li>Alterar o Parser, criando os métodos <code>parseProgram()</code> e <code>parseStatement()</code>. ajustar o método <code>parseFactor()</code>.</li>
 </ol>
