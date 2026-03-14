@@ -961,13 +961,13 @@
 </div>
 <p>A EBNF atualizada será:</p>
 <div class="highlight"><pre><span></span><code>PROGRAM = { STATEMENT } ;
-STATEMENT = ((IDENTIFIER, \&quot;=\&quot;, EXPRESSION) | (PRINT, \&quot;(\&quot;, EXPRESSION, \&quot;)\&quot;) | ε), EOL ;
-EXPRESSION = TERM, { (\&quot;+\&quot; | \&quot;-\&quot;), TERM } ;
-TERM = FACTOR, { (\&quot;*\&quot; | \&quot;/\&quot;), FACTOR } ;
-FACTOR = (\&quot;+\&quot; | \&quot;-\&quot;), FACTOR | \&quot;(\&quot;, EXPRESSION, \&quot;)\&quot; | NUMBER ;
+STATEMENT = ((IDENTIFIER, &quot;=&quot;, EXPRESSION) | (PRINT, &quot;(&quot;, EXPRESSION, &quot;)&quot;) | ε), EOL ;
+EXPRESSION = TERM, { (&quot;+&quot; | &quot;-&quot;), TERM } ;
+TERM = FACTOR, { (&quot;*&quot; | &quot;/&quot;), FACTOR } ;
+FACTOR = (&quot;+&quot; | &quot;-&quot;), FACTOR | &quot;(&quot;, EXPRESSION, &quot;)&quot; | NUMBER ;
 NUMBER = DIGIT, {DIGIT} ;
 DIGIT = 0 | 1 | ... | 9 ;
-IDENTIFIER = LETTER, {LETTER | DIGIT | \&quot;_\&quot;} ;
+IDENTIFIER = LETTER, {LETTER | DIGIT | &quot;_&quot;} ;
 LETTER = a | b | ... | z | A | B | ... | Z ;
 </code></pre></div>
 <p>Logo, serão criadas duas novas funções na classe <code>Parser</code>:</p>
