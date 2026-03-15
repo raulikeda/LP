@@ -1,0 +1,1105 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Raul Ikeda">
+      
+      
+      
+        <link rel="prev" href="../../Roteiro9/">
+      
+      
+        <link rel="next" href="../Roteiro3/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Roteiro 2 (Functional) - v1.0 - Ling & Par</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roteiro-2-functional-v10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ling &amp; Par" class="md-header__button md-logo" aria-label="Ling & Par" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ling & Par
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roteiro 2 (Functional) - v1.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ling &amp; Par" class="md-nav__button md-logo" aria-label="Ling & Par" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ling & Par
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 1 - v0.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2 - v1.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3 - v1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4 - v1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 5 - v2.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 6 - v2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 7 - v2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 8 - v3.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 9 - v2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Functional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Functional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2 (Functional) - v1.0
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2 (Functional) - v1.0
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrega-03mar2026-as-07h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega: 03/Mar/2026 às 07h15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-do-roteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos do Roteiro
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos do Roteiro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-as-mensagens-de-erro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre as mensagens de erro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-tipos-e-construcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Tipos e Construções
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-monads-e-pureza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Monads e Pureza
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefas:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Testes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3 (Funcional) - v1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4 (Functional) - v1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 5 (Functional) - v2.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrega-03mar2026-as-07h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega: 03/Mar/2026 às 07h15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-do-roteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos do Roteiro
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos do Roteiro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobre-as-mensagens-de-erro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre as mensagens de erro
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-tipos-e-construcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Tipos e Construções
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-monads-e-pureza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobre Monads e Pureza
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefas:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Testes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios Adicionais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="roteiro-2-functional-v10">Roteiro 2 (Functional) - <strong>v1.0</strong></h1>
+<h2 id="entrega-03mar2026-as-07h15">Entrega: 03/Mar/2026 às 07h15</h2>
+<h2 id="objetivos">Objetivos</h2>
+<ol>
+<li>Reestruturar o compilador para o modelo visto em aula.</li>
+<li>Implementar a separação de fases.</li>
+</ol>
+<h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
+<p>Você irá implementar a análise léxica e a análise sintática através de dois tipos diferentes: <code>Lexer</code> e <code>Parser</code>.</p>
+<p><code>Lexer</code> será um <em>alias</em> <code>(String, Int)</code>, representando o código fonte de entrada no compilador e a posição do caractere analisado.</p>
+<p>Já o tipo <code>Token</code> consiste em uma construção:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="kt">Token</span>
+<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">PLUS</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">MINUS</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="kt">Int</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">EOF</span>
+</code></pre></div>
+<p>Onde haverá diferentes disponíveis:</p>
+<ul>
+<li><code>INT</code> value - que representa o valor de um número</li>
+<li><code>PLUS</code> - que representa o símbolo +</li>
+<li><code>MINUS</code> - que representa o símbolo -</li>
+<li><code>EOF</code> - que representa o final da string de entrada</li>
+</ul>
+<p>A análise léxica ocorrerá através de uma função <code>selectNext :: Lexer -&gt; (Lexer, Token)</code>. Ela irá quebrar o código fonte sob demanda, sempre analisando um caractere específico representado pelo índice de posição. </p>
+<p>Ao achar um símbolo de interesse, irá parar e retornar o <code>Token</code> correspondente. Como não há estados, a função retorna o próprio código de entrada e a posição atualizada.</p>
+<p>Um possível algoritmo seria:
+<div class="highlight"><pre><span></span><code>  Pule os espaços atualizando a posição
+  Se posição for maior que o tamanho da string, Token será EOF
+  Senão
+    Se o char for &#39;+&#39;, Token será Plus
+    Se o char for &#39;-&#39;, Token será Minus
+    Se o char for dígito, selecione todos os dígitos subsequentes. Token será Int com o valor numérico achado.
+    Caso contrário, será um erro léxico
+</code></pre></div></p>
+<p>Você pode usar as funções <code>isDigit</code> e <code>isSpace</code> como suporte. Você também pode controlar a recursão usando <code>takeWhile/span</code> e <code>drop</code>.</p>
+<p>O tipo <code>Parser</code> será uma construção:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="kt">Parser</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">(</span><span class="kt">Lexer</span><span class="p">,</span><span class="w"> </span><span class="kt">Token</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">Lexer</span><span class="p">,</span><span class="w"> </span><span class="kt">Token</span><span class="p">))</span>
+</code></pre></div>
+<p>E todas as funções da análise sintática seguirão essa construção. As funções receberão um <code>Lexer</code> e um <code>Token</code> e devolverão um resultado, seguido do <code>Lexer</code> atualizado e o próximo <code>Token</code> já selecionado. As funções seguirão o padrão exibido no Diagrama Sintático:</p>
+<p><img alt="center|white" src="../../images/H2-ds-full.png" /></p>
+<p>Convertendo o Diagrama, um possível algoritmo para a função <code>parseExpression</code> é:</p>
+<div class="highlight"><pre><span></span><code>função parseExpression :: Parser Int
+  Se Token é Int, chame uma função auxiliar com o valor e o próximo Token
+  Senão erro sintático
+  função auxiliar:
+    Se Token é Plus, some o resultado com parseExpression usando próximo Token
+    Se Token é Minus, subtraia o resultado com parseExpression usando próximo Token
+    Senão retorne.
+</code></pre></div>
+<p>Adicionalmente, criar uma função <code>run</code>, que servirá de ponto de entrada para iniciar a análise. A função deverá chamar <code>parseExpression</code> posicionando no primeiro <code>Token</code>. Ao retornar com o resultado, deve-se verificar se o <code>Token</code> é um <code>EOF</code>. Ao final, retornar o resultado para a impressão na main.</p>
+<p>É esperado algo como:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">run</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+<span class="nf">run</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="ow">=</span>
+<span class="w">    </span><span class="kr">let</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kr">_</span><span class="p">,</span><span class="w"> </span><span class="n">tok</span><span class="p">))</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">parseExpression</span><span class="w"> </span><span class="p">(</span><span class="n">selectNext</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">    </span><span class="kr">in</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span><span class="n">tok</span><span class="w"> </span><span class="kr">of</span>
+<span class="w">        </span><span class="kt">EOF</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">val</span>
+<span class="w">        </span><span class="kr">_</span><span class="w">   </span><span class="ow">-&gt;</span><span class="w"> </span><span class="ne">error</span><span class="w"> </span><span class="s">&quot;[Parser] Unexpected tokens after expression&quot;</span>
+</code></pre></div>
+<div class="admonition attention">
+<p class="admonition-title">Atenção</p>
+<p>A especificação acima utiliza a formatação <code>camelCase</code>, usualmente utilizada em Haskell. Se você utiliza o OCaml ou F#, converter para o formato <code>snake_case</code> ou <code>PascalCase</code>para soar mais idiomático.</p>
+</div>
+<h3 id="sobre-as-mensagens-de-erro">Sobre as mensagens de erro</h3>
+<p>Coloquem mensagens de erro que façam sentido. Coloquem também a fonte do erro. Isso irá facilitar a depuração no futuro.</p>
+<p>Atualmente teremos erros com os prefixos:</p>
+<ul>
+<li><code>[Parser]</code> para erros disparados na classe Parser</li>
+<li><code>[Lexer]</code> para erros disparados na classe Lexer</li>
+</ul>
+<p>Por exemplo: <code>[Parser] Unexpected token PLUS</code> ou <code>[Lexer] Invalid Symbol $</code></p>
+<h2 id="sobre-tipos-e-construcoes">Sobre Tipos e Construções</h2>
+<p>Linguagens Funcionais não trabalham com o conceito de Classes e Objetos. Na realidade não trabalham com o conceito de variável como uma linguagem procedural. Existem binding imutáveis que atribuem localmente um label para um contexto.</p>
+<p>Portanto o conceito de modelagem é um pouco diferente do usualmente utilizado em Linguagens Orientadas a Objetos (OOP). Em linguagens funcionais trabalha-se com Tipos ao invés de classes. E a construção desses tipos podem ocorrer via intersecção (record ou tuplas) ou união, ou ambos.</p>
+<p>Por exemplo, <code>Token</code> seria uma Classe com dois atributos: <code>type: String</code> e <code>value: Int | String</code>. Ao transpormos para o mundo funcional, <code>Token</code> vira um <strong>tipo</strong> e o type é definido pelo seu construtor (NT: não confundir construtor de tipos com construtor de objetos de uma classe, são ideias parecidas, mas não é a mesma coisa).</p>
+<p>Como temos 4 tipos diferentes de token: <code>[INT, PLUS, MINUS, EOF]</code>, isso se torna o tipo <code>Token</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="kt">Token</span>
+<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">PLUS</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">MINUS</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="kt">Int</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">EOF</span>
+</code></pre></div>
+<p>Como <code>PLUS</code>, <code>MINUS</code> e <code>EOF</code> não precisam armazenar um <code>value</code>, não é necessário passar valores na construção. Para criar uma variável do tipo <code>Token</code>, basta construir:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">let</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">PLUS</span><span class="w"> </span><span class="c1">-- v é um Token PLUS</span>
+<span class="kr">let</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1">-- w é um Token INT com o valor 2</span>
+</code></pre></div>
+<p>E isso facilita o uso via <em>pattern matching</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">case</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="kr">of</span>
+<span class="w">   </span><span class="kt">PLUS</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="c1">-- Se v for um Token PLUS</span>
+<span class="w">   </span><span class="p">(</span><span class="kt">INT</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="c1">-- Se v for um Token INT, e n será o valor de fato</span>
+</code></pre></div>
+<p>Também é possível construir um tipo que concatena dois tipos distintos (<em>type alias</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="kt">Lexer</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span>
+</code></pre></div>
+<p>Isso indica que tudo que for do tipo Lexer, será constituído de uma tupla de 2 dimensões (ou dupla), uma <code>String</code> e uma <code>Int</code>. E isso ajuda na hora de realizar o <em>pattern matching</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">selectNext</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Lexer</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">Lexer</span><span class="p">,</span><span class="w"> </span><span class="kt">Token</span><span class="p">)</span>
+<span class="nf">selectNext</span><span class="w"> </span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span>
+<span class="w">  </span><span class="c1">-- Lexer será decomposto em Str, Int e os valores assimilados em src e pos</span>
+<span class="w">  </span><span class="o">...</span>
+</code></pre></div>
+<h2 id="sobre-loops">Sobre Loops</h2>
+<p>Não há loops no sentido procedural (<code>while</code>, <code>for</code>, <code>repeat</code>, <code>goto</code>, etc). É preciso realizar recursões para realizar laços. Contudo muito cuidado para deixar explícito pelo menos um caso base para não ocorrer loop infinito. Outra forma de realizar laços é utilizando <code>Map</code> ou <code>Fold</code>.</p>
+<p>É muito comum o uso de funções auxiliares para executar loops via recursão. É o caso do <code>parseExpression</code> do roteiro.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">parseStatement</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Parser</span><span class="w"> </span><span class="kt">Int</span>
+<span class="nf">parseStatement</span><span class="w"> </span><span class="p">(</span><span class="n">lex</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span>
+<span class="w">    </span><span class="kr">case</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="kr">of</span>
+<span class="w">      </span><span class="p">(</span><span class="kt">INT</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">(</span><span class="n">selectNext</span><span class="w"> </span><span class="n">lex</span><span class="p">)</span>
+<span class="w">      </span><span class="kr">_</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="ne">error</span><span class="w"> </span><span class="s">&quot;[Parser] Expected token INT&quot;</span>
+<span class="w">  </span><span class="kr">where</span>
+<span class="w">    </span><span class="n">aux</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="p">(</span><span class="n">lex</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span>
+<span class="w">       </span><span class="kr">let</span><span class="w"> </span><span class="p">(</span><span class="n">lex&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">token&#39;</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">selectNext</span><span class="w"> </span><span class="n">lex</span>
+<span class="w">       </span><span class="kr">in</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">token&#39;</span><span class="p">)</span><span class="w"> </span><span class="kr">of</span>
+<span class="w">            </span><span class="kt">PLUS</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">INT</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="p">(</span><span class="n">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">lex&#39;</span><span class="w"> </span>
+<span class="w">            </span><span class="o">...</span>
+</code></pre></div>
+<p>Atenção: Ao realizar <code>fold</code>, tradicionalmente a linguagem realiza o <code>fold</code> à esquerda, o que fará com que a execução seja invertida. Caso deseje iterar sem inversão, utilize <code>foldr</code> ou <code>flip</code>. Isso também pode acontecer com recursões, dependendo da forma com que ela é construída.</p>
+<p>Atenção 2: Haskell utiliza o conceito de <code>lazy evaluation</code>, ou seja, só executa as expressões quando realmente precisa. Isso pode apresentar efeitos colaterais indesejados. Às vezes é preciso forçar a execução de trechos de código utilizando <code>seq</code>.</p>
+<h2 id="sobre-monads-e-pureza">Sobre Monads e Pureza</h2>
+<p>Tente ao máximo possível deixar as funções puras. <code>main</code> naturalmente será <code>IO ()</code> porque precisa receber valores e imprimir o resultado. Evite ao máximo o uso de monads como <code>Either</code> ou <code>Maybe</code>, prefira construções de tipos.</p>
+<p>Vai chegar um momento em um roteiro posterior que será inevitável o uso de monads (list, state, IO, etc), mas por enquanto, ainda não será necessário. Lembre-se que: uma vez dentro do monad, nunca mais (deveria estar) fora do monad, a função que é levada (<em>lift</em>) para dentro do mundo monádico.</p>
+<h2 id="tarefas">Tarefas:</h2>
+<ol>
+<li>Colocar o Diagrama Sintático no README do GitHub.</li>
+<li>Criar um tipo <strong>Token</strong></li>
+<li>Criar um tipo <strong>Lexer</strong></li>
+<li>Criar uma função <code>selectNext</code>: recebe o código de entrada e a posição e retorna o Token correspondente.</li>
+<li>Criar um tipo <strong>Parser</strong></li>
+<li>Criar a função <code>parseExpression</code>: consome os tokens do Lexer e analisa se a sintaxe está aderente à gramática proposta. retorna o resultado numérico da expressão analisada.</li>
+<li>Criar a função <code>run</code>: recebe o código fonte como argumento, posiciona no primeiro token e retorna o resultado do <code>parseExpression</code>. Ao final verificar se terminou de consumir toda a cadeia (o token deve ser <code>EOF</code>).</li>
+<li>O <code>main</code> do compilador deve chamar a função <code>run</code> e imprimir o retorno da função.</li>
+</ol>
+<h2 id="base-de-testes">Base de Testes:</h2>
+<p>Sem erros:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+2
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">3</span>-2
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">11</span>+22-33
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">789</span><span class="w">   </span>+345<span class="w">  </span>-<span class="w">    </span><span class="m">123</span>
+</code></pre></div></p>
+<p>Com erros:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span>&gt;&gt;<span class="w"> </span>+1
+<span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">1</span>+
+</code></pre></div></p>
+<h2 id="extra-credit">Extra Credit</h2>
+<p>Antes de executar a tarefa, sugere-se criar uma branch separada para os exercícios. Você pode criar usando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>extra<span class="w"> </span>v1.0.X
+</code></pre></div>
+<p>Assim, toda vez que você terminar um roteiro principal, basta dar um <em>merge</em> na branch extra e executar o exercício.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Implementar a operação de XOR entre números inteiros. XOR tem a mesma precedência de + e -, logo a operação será realizada por ordem de chegada. O símbolo que representa o operador é o <code>^</code>.</p>
+<p>Segue um exemplo abaixo:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="m">2</span><span class="w"> </span>^<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span><span class="m">1</span>
+</code></pre></div></p>
+</div>
+<p>Usar a tag <code>x1.0.X</code> para realizar a correção desse exercício.</p>
+<h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
+<ol>
+<li>Nosso compilador é de 1 passagem ou múltiplas passagens? Justifique.</li>
+<li>Esboce como você implementaria as operações de MULTIPLICAÇÃO e DIVISÃO. Veja os testes:
+<div class="highlight"><pre><span></span><code>  &gt;&gt; 4/2+3
+  &gt;&gt; 2 + 3 * 5
+</code></pre></div></li>
+<li>Explique por que o resultado estaria incorreto.</li>
+<li>Sugira a correção no diagrama sintático (não precisa implementar).</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
