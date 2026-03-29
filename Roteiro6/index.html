@@ -932,12 +932,12 @@
 <p>Os operadores binários e unário utilizarão a estrutura já presentes nos nós <code>BinOp</code> e <code>UnOp</code> respectivamente.</p>
 <p>O <code>IF</code> irá gerar um novo nó <code>If</code> com 2 ou 3 filhos, a depender da presencial opcional do <code>ELSE</code>. O <code>evaluate()</code> do nó irá realizar o <code>evaluate()</code> do primeiro filho e avaliar se irá executar o segundo ou terceiro filho, se presente.</p>
 <p><img alt="center" src="../images/cap2.2-ast-if.png" /></p>
-<p>O <code>WHILE</code> irá gerar um novo nó <code>while</code> com 2 filhos. O <code>evaluate()</code> do nó irá realizar o <code>evaluate()</code> do primeiro filho e avaliar se irá executar o segundo ou terceiro filho, se presente.</p>
+<p>O <code>WHILE</code> irá gerar um novo nó <code>while</code> com 2 filhos. O <code>evaluate()</code> do nó irá realizar o <code>evaluate()</code> do primeiro filho e avaliar se irá executar o segundo filho.</p>
 <p><img alt="center" src="../images/cap2.2-ast-while.png" /></p>
 <p>Finalmente, o <code>READ</code> será um nó sem filhos. A sua execução irá retornar uma entrada do terminal do tipo inteiro.</p>
 <h3 id="parser">Parser</h3>
 <p>Adicionar a função <code>parseBlock()</code>. Ela será parecida com o parseProgram(), porém considerando a abertura e fechamento de chaves. Ela gerará um nó <code>Block</code>.</p>
-<p>Adicionar os novos caminhos em parseStatement(). Atentar para quais nós serão gerados para cada caminho.</p>
+<p>Adicionar os novos caminhos em <code>parseStatement()</code>. Atentar para quais nós serão gerados para cada caminho.</p>
 <p>Adicionar as funções <code>parseBoolExpression()</code>, <code>parseBoolTerm()</code> e <code>parseRelExpression()</code>. Elas serão análogas à função <code>parseExpression()</code>, inclusive irão gerar nós da classe <code>BinOp</code>.</p>
 <p>Corrigir a função <code>parseFactor()</code> para incluir a operação unária <code>NOT</code> e a função <code>READ</code>.</p>
 <h2 id="tarefas">Tarefas:</h2>
