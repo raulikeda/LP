@@ -906,7 +906,7 @@
 </code></pre></div>
 <h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>Conforme explicado em aula, o novo Diagrama Sintático será:</p>
-<p><img alt="center|white" src="./images/H6-ds-full.png" /></p>
+<p><img alt="center|white" src="../../images/H6-ds-full.png" /></p>
 <div class="admonition atenção">
 <p class="admonition-title">Atenção</p>
 <p>A figura representa o modelo equivalente para linguagem C. Algumas adaptações são necessárias para linguagem compilada no semestre.</p>
@@ -954,9 +954,9 @@
 <h3 id="ast">AST</h3>
 <p>Os operadores binários e unário utilizarão a estrutura já presentes nos nós <code>BinOp</code> e <code>UnOp</code> respectivamente. Deve-se convencionar 1 para <code>True</code> e 0 para <code>False</code>.</p>
 <p>O <code>IF</code> irá gerar um novo nó <code>If</code> com 3 filhos, a depender da presencial opcional do <code>ELSE</code>. O <code>evaluate</code> do nó irá realizar o <code>evaluate</code> do primeiro filho e avaliar se irá executar o segundo ou terceiro filho.</p>
-<p><img alt="center" src="./images/cap2.2-ast-if.png" /></p>
+<p><img alt="center" src="../../images/cap2.2-ast-if.png" /></p>
 <p>O <code>WHILE</code> irá gerar um novo nó <code>while</code> com 2 filhos. O <code>evaluate</code> do nó irá realizar o <code>evaluate</code> do primeiro filho e executar o <code>evaluate</code> do segundo enquanto for verdadeiro.</p>
-<p><img alt="center" src="./images/cap2.2-ast-while.png" /></p>
+<p><img alt="center" src="../../images/cap2.2-ast-while.png" /></p>
 <p>Finalmente, o <code>READ</code> será um nó sem filhos. A sua execução irá retornar uma entrada do terminal do tipo inteiro. Como o nó faz parte do grupo de expressões, manterá a estrutura com <code>evaluate</code>, porém realizará IO. </p>
 <p>Para manter a assinatura original do <code>evaluate</code>, vamos cometer uma pequena heresia e usar um <code>unsafePerformIO</code>, que irá permitir realizar o <code>getLine</code> e retornar um <code>Int</code>.</p>
 <h3 id="parser">Parser</h3>
