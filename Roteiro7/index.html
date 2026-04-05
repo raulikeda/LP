@@ -932,7 +932,8 @@
 <h3 id="lexer">Lexer</h3>
 <p>Adicionar os novos tokens:</p>
 <ul>
-<li><code>let mut</code> - token <code>VAR</code></li>
+<li><code>let</code> - token <code>LET</code></li>
+<li><code>mut</code> - token <code>MUT</code></li>
 <li><code>true</code>, <code>false</code> - token <code>BOOL</code></li>
 <li>Valores string: separar todo o conteúdo entre aspas. Declarar um token tipo <code>STR</code></li>
 <li><code>String</code>, <code>i32</code>, <code>bool</code> - token <code>TYPE</code></li>
@@ -972,16 +973,14 @@
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Implementar a operação de <em>casting</em>. Ele é um operador unário que possui a maior prioridade, apenas atrás do parênteses. O tipo a ser convertido será sinalizado na estrutura do operador. Implementar também números do tipo <em>float</em>. Será possível realizar operações entre <em>int</em> e <em>float</em> livremente, mas o resultado será sempre <em>float</em> quando incluir um número <em>float</em> na operação.</p>
-<p>Segue um exemplo abaixo:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Converts to 2 (INT) and assign to x</span>
-<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w">  </span><span class="c1">// z receives 3.6 (FLOAT)</span>
-</code></pre></div></p>
+<p>Segue um exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="kt">f64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Converts to INT 2 and assign to x</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// z receives FLOAT 3.6</span>
+</code></pre></div>
 </div>
 <h2 id="questionario">Questionário</h2>
 <ol>
-<li>Proponha uma implementação de <em>float</em>.</li>
-<li>Proponha uma implementação de <em>const</em> (variáveis imutáveis).</li>
 <li>Como você modificaria o seu compilador para gerar código assembly do código fonte?</li>
 </ol>
 
