@@ -590,6 +590,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ebnf-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      EBNF Final
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas
@@ -997,6 +1006,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ebnf-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      EBNF Final
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tarefas" class="md-nav__link">
     <span class="md-ellipsis">
       Tarefas
@@ -1150,6 +1168,27 @@
 <li>Realize o <code>evaluate()</code> dos argumentos passados e preencha na <code>SymbolTable</code></li>
 <li>Capture o <code>return</code>, se houver, e verifique o tipo de retorno da função. Retorne o valor (cuidado com o <code>void</code>)</li>
 </ul>
+<h2 id="ebnf-final">EBNF Final</h2>
+<div class="highlight"><pre><span></span><code><span class="k">PROGRAM </span><span class="o">=</span> <span class="p">{</span> <span class="k">FUNCDEC </span><span class="p">|</span> <span class="k">VARDEC </span><span class="p">}</span> <span class="p">;</span>
+<span class="k">FUNCDEC </span><span class="o">=</span> <span class="s2">&quot;fn&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,(|</span> <span class="k">IDENTIFIER</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">}),</span><span class="s2">&quot;)&quot;</span><span class="p">,(</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="k">TYPE</span><span class="p">|</span><span class="s2">&quot;(&quot;</span><span class="p">,</span><span class="s2">&quot;)&quot;</span><span class="p">)|),</span> <span class="k">BLOCK</span><span class="p">;</span>
+<span class="k">VARDEC </span><span class="o">=</span> <span class="s2">&quot;let&quot;</span><span class="p">,</span> <span class="s2">&quot;mut&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">,</span> <span class="p">(</span> <span class="p">|</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">),</span> <span class="s2">&quot;;&quot;</span><span class="p">;</span>
+<span class="k">BLOCK </span><span class="o">=</span> <span class="s2">&quot;{&quot;</span><span class="p">,</span> <span class="p">{</span><span class="k">STATEMENT</span><span class="p">,</span> <span class="p">},</span> <span class="s2">&quot;}&quot;</span> <span class="p">;</span>
+<span class="k">STATEMENT </span><span class="o">=</span> <span class="p">(|(</span><span class="k">IDENTIFIER</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">|</span> <span class="s2">&quot;(&quot;</span><span class="p">,(</span><span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">}</span> <span class="p">|</span> <span class="p">),</span><span class="s2">&quot;)&quot;</span><span class="p">))</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;println!&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span> <span class="p">|</span> <span class="s2">&quot;return&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">|),</span> <span class="s2">&quot;;&quot;</span><span class="p">|</span> <span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">,</span> <span class="p">(|</span><span class="s2">&quot;ELSE&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">))</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;while&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">)</span> <span class="p">|</span> <span class="k">VARDEC </span><span class="p">|</span> <span class="k">BLOCK</span><span class="p">;</span>
+<span class="k">BOOLEXPRESSION </span><span class="o">=</span> <span class="k">BOOLTERM</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;||&quot;</span><span class="p">,</span> <span class="k">BOOLTERM </span><span class="p">}</span> <span class="p">;</span>
+<span class="k">BOOLTERM </span><span class="o">=</span> <span class="k">RELEXPRESSION</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;&amp;&amp;&quot;</span><span class="p">,</span> <span class="k">RELEXPRESSION </span><span class="p">}</span> <span class="p">;</span>
+<span class="k">RELEXPRESSION </span><span class="o">=</span> <span class="k">EXPRESSION</span><span class="p">,</span> <span class="p">{(</span><span class="s2">&quot;==&quot;</span> <span class="p">|</span> <span class="s2">&quot;&lt;&quot;</span> <span class="p">|</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">),</span> <span class="k">EXPRESSION</span><span class="p">};</span>
+<span class="k">EXPRESSION </span><span class="o">=</span> <span class="k">TERM</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="s2">&quot;+&quot;</span> <span class="p">|</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span> <span class="k">TERM </span><span class="p">}</span> <span class="p">;</span>
+<span class="k">TERM </span><span class="o">=</span> <span class="k">FACTOR</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="p">|</span> <span class="s2">&quot;/&quot;</span><span class="p">),</span> <span class="k">FACTOR </span><span class="p">}</span> <span class="p">;</span>
+<span class="k">FACTOR </span><span class="o">=</span> <span class="k">NUMBER </span><span class="p">|</span> <span class="k">STRING </span><span class="p">|</span> <span class="k">BOOLEAN </span><span class="p">|</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">,(</span><span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">}</span> <span class="p">|</span> <span class="p">),</span><span class="s2">&quot;)&quot;</span><span class="p">|)</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;+&quot;</span> <span class="p">|</span> <span class="s2">&quot;-&quot;</span> <span class="p">|</span><span class="s2">&quot;!&quot;</span><span class="p">),</span> <span class="k">FACTOR </span><span class="p">|</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span> <span class="p">|</span> <span class="s2">&quot;readln!&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span> <span class="p">;</span>
+<span class="k">TYPE </span><span class="o">=</span> <span class="s2">&quot;i32&quot;</span> <span class="p">|</span> <span class="s2">&quot;str&quot;</span> <span class="p">|</span> <span class="s2">&quot;bool&quot;</span> <span class="p">;</span>
+<span class="k">NUMBER </span><span class="o">=</span> <span class="k">DIGIT</span><span class="p">,</span> <span class="p">{</span><span class="k">DIGIT</span><span class="p">}</span> <span class="p">;</span>
+<span class="k">IDENTIFIER </span><span class="o">=</span> <span class="k">LETTER</span><span class="p">,</span> <span class="p">{</span><span class="k">LETTER </span><span class="p">|</span> <span class="k">DIGIT </span><span class="p">|</span> <span class="s2">&quot;_&quot;</span><span class="p">}</span> <span class="p">;</span>
+<span class="k">STRING </span><span class="o">=</span> <span class="s1">&#39;&quot;...&quot;&#39;</span> <span class="p">;</span>
+<span class="k">DIGIT </span><span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;9&quot;</span><span class="p">;</span>
+<span class="k">LETTER </span><span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;z&quot;</span> <span class="p">|</span> <span class="s2">&quot;A&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;Z&quot;</span> <span class="p">;</span>
+<span class="k">BOOLEAN </span><span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="p">|</span> <span class="s2">&quot;false&quot;</span> <span class="p">;</span>
+</code></pre></div>
+<p>Gerar o Diagrama Sintático e atualizar o README.</p>
 <h2 id="tarefas">Tarefas</h2>
 <ol>
 <li>Atualize a <strong>EBNF</strong> e o <strong>DS</strong> no GitHub. Essa é a versão final!</li>
