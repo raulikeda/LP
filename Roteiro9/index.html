@@ -239,7 +239,7 @@
   
   
   <span class="md-ellipsis">
-    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/1
+    Projeto de Compilador - Linguagens &amp; Paradigmas - 2026/2
     
   </span>
   
@@ -482,9 +482,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-07may2026-as-07h15" class="md-nav__link">
+  <a href="#entrega-03nov2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 07/May/2026 às 07h15
+      Entrega: 03/Nov/2026 às 07h15
     </span>
   </a>
   
@@ -898,9 +898,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-07may2026-as-07h15" class="md-nav__link">
+  <a href="#entrega-03nov2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 07/May/2026 às 07h15
+      Entrega: 03/Nov/2026 às 07h15
     </span>
   </a>
   
@@ -1067,45 +1067,41 @@
 
 
 <h1 id="roteiro-9-v23">Roteiro 9 - <strong>v2.3</strong></h1>
-<h2 id="entrega-07may2026-as-07h15">Entrega: 07/May/2026 às 07h15</h2>
+<h2 id="entrega-03nov2026-as-07h15">Entrega: 03/Nov/2026 às 07h15</h2>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Implementar Declarações de Funções</li>
 <li>Escopo de variáveis</li>
 </ol>
 <h2 id="exemplo-de-sintaxe">Exemplo de sintaxe:</h2>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Global</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Global</span>
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">soma</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Local</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">soma</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Local</span>
 <span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 3</span>
-<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 5</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 3</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 5</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="funcoes">Funções</h2>
 <p>Como exemplificado acima, a linguagem permite declarar funções simples e com declaração de tipo. Todas as funções a princípio possuem visibilidade pública e podem ser usadas em outras Funções. Não será possível declarar uma função dentro de uma função.</p>
-<ul>
-<li>Na linguagem se a função não declarar um tipo, o tipo será automaticamente <code>unit</code>. A função <code>main</code> é obrigatória.</li>
-</ul>
 <h2 id="lexer">Lexer</h2>
 <ul>
-<li>Adicionar a palavra reservada <code>fn</code>: token <code>FUNC</code></li>
+<li>Adicionar a palavra reservada <code>`: token</code>FUNC`</li>
 <li>Adicionar a palavra reservada <code>return</code>: token <code>RETURN</code></li>
 <li>Adicionar o símbolo <code>,</code>: token <code>COMMA</code></li>
-<li>Adicionar o símbolo <code>-&gt;</code>: token <code>ARROW</code></li>
 </ul>
 <h2 id="ast-parte-i">AST - Parte I</h2>
 <ul>
@@ -1169,24 +1165,7 @@
 <li>Capture o <code>return</code>, se houver, e verifique o tipo de retorno da função. Retorne o valor (cuidado com o <code>void</code>)</li>
 </ul>
 <h2 id="ebnf-final">EBNF Final</h2>
-<div class="highlight"><pre><span></span><code><span class="k">PROGRAM </span><span class="o">=</span> <span class="p">{</span> <span class="k">FUNCDEC </span><span class="p">|</span> <span class="k">VARDEC </span><span class="p">}</span> <span class="p">;</span>
-<span class="k">FUNCDEC </span><span class="o">=</span> <span class="s2">&quot;fn&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,(|</span> <span class="k">IDENTIFIER</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">}),</span><span class="s2">&quot;)&quot;</span><span class="p">,(</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="k">TYPE</span><span class="p">|</span><span class="s2">&quot;(&quot;</span><span class="p">,</span><span class="s2">&quot;)&quot;</span><span class="p">)|),</span> <span class="k">BLOCK</span><span class="p">;</span>
-<span class="k">VARDEC </span><span class="o">=</span> <span class="s2">&quot;let&quot;</span><span class="p">,</span> <span class="s2">&quot;mut&quot;</span><span class="p">,</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="k">TYPE</span><span class="p">,</span> <span class="p">(</span> <span class="p">|</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">),</span> <span class="s2">&quot;;&quot;</span><span class="p">;</span>
-<span class="k">BLOCK </span><span class="o">=</span> <span class="s2">&quot;{&quot;</span><span class="p">,</span> <span class="p">{</span><span class="k">STATEMENT</span><span class="p">,</span> <span class="p">},</span> <span class="s2">&quot;}&quot;</span> <span class="p">;</span>
-<span class="k">STATEMENT </span><span class="o">=</span> <span class="p">(|(</span><span class="k">IDENTIFIER</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">|</span> <span class="s2">&quot;(&quot;</span><span class="p">,(</span><span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">}</span> <span class="p">|</span> <span class="p">),</span><span class="s2">&quot;)&quot;</span><span class="p">))</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;println!&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span> <span class="p">|</span> <span class="s2">&quot;return&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION </span><span class="p">|),</span> <span class="s2">&quot;;&quot;</span><span class="p">|</span> <span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">,</span> <span class="p">(|</span><span class="s2">&quot;ELSE&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">))</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;while&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="k">STATEMENT</span><span class="p">)</span> <span class="p">|</span> <span class="k">VARDEC </span><span class="p">|</span> <span class="k">BLOCK</span><span class="p">;</span>
-<span class="k">BOOLEXPRESSION </span><span class="o">=</span> <span class="k">BOOLTERM</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;||&quot;</span><span class="p">,</span> <span class="k">BOOLTERM </span><span class="p">}</span> <span class="p">;</span>
-<span class="k">BOOLTERM </span><span class="o">=</span> <span class="k">RELEXPRESSION</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;&amp;&amp;&quot;</span><span class="p">,</span> <span class="k">RELEXPRESSION </span><span class="p">}</span> <span class="p">;</span>
-<span class="k">RELEXPRESSION </span><span class="o">=</span> <span class="k">EXPRESSION</span><span class="p">,</span> <span class="p">{(</span><span class="s2">&quot;==&quot;</span> <span class="p">|</span> <span class="s2">&quot;&lt;&quot;</span> <span class="p">|</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">),</span> <span class="k">EXPRESSION</span><span class="p">};</span>
-<span class="k">EXPRESSION </span><span class="o">=</span> <span class="k">TERM</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="s2">&quot;+&quot;</span> <span class="p">|</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span> <span class="k">TERM </span><span class="p">}</span> <span class="p">;</span>
-<span class="k">TERM </span><span class="o">=</span> <span class="k">FACTOR</span><span class="p">,</span> <span class="p">{</span> <span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="p">|</span> <span class="s2">&quot;/&quot;</span><span class="p">),</span> <span class="k">FACTOR </span><span class="p">}</span> <span class="p">;</span>
-<span class="k">FACTOR </span><span class="o">=</span> <span class="k">NUMBER </span><span class="p">|</span> <span class="k">STRING </span><span class="p">|</span> <span class="k">BOOLEAN </span><span class="p">|</span> <span class="k">IDENTIFIER</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">,(</span><span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">}</span> <span class="p">|</span> <span class="p">),</span><span class="s2">&quot;)&quot;</span><span class="p">|)</span> <span class="p">|</span> <span class="p">(</span><span class="s2">&quot;+&quot;</span> <span class="p">|</span> <span class="s2">&quot;-&quot;</span> <span class="p">|</span><span class="s2">&quot;!&quot;</span><span class="p">),</span> <span class="k">FACTOR </span><span class="p">|</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="k">BOOLEXPRESSION</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span> <span class="p">|</span> <span class="s2">&quot;readln!&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span> <span class="p">;</span>
-<span class="k">TYPE </span><span class="o">=</span> <span class="s2">&quot;i32&quot;</span> <span class="p">|</span> <span class="s2">&quot;str&quot;</span> <span class="p">|</span> <span class="s2">&quot;bool&quot;</span> <span class="p">;</span>
-<span class="k">NUMBER </span><span class="o">=</span> <span class="k">DIGIT</span><span class="p">,</span> <span class="p">{</span><span class="k">DIGIT</span><span class="p">}</span> <span class="p">;</span>
-<span class="k">IDENTIFIER </span><span class="o">=</span> <span class="k">LETTER</span><span class="p">,</span> <span class="p">{</span><span class="k">LETTER </span><span class="p">|</span> <span class="k">DIGIT </span><span class="p">|</span> <span class="s2">&quot;_&quot;</span><span class="p">}</span> <span class="p">;</span>
-<span class="k">STRING </span><span class="o">=</span> <span class="s1">&#39;&quot;...&quot;&#39;</span> <span class="p">;</span>
-<span class="k">DIGIT </span><span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;9&quot;</span><span class="p">;</span>
-<span class="k">LETTER </span><span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;z&quot;</span> <span class="p">|</span> <span class="s2">&quot;A&quot;</span> <span class="p">|</span> <span class="s2">&quot;...&quot;</span> <span class="p">|</span> <span class="s2">&quot;Z&quot;</span> <span class="p">;</span>
-<span class="k">BOOLEAN </span><span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="p">|</span> <span class="s2">&quot;false&quot;</span> <span class="p">;</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>Gerar o Diagrama Sintático e atualizar o README.</p>
 <h2 id="tarefas">Tarefas</h2>
@@ -1232,7 +1211,6 @@
 <li>Se o filho do tipo <code>Block</code> retornar valor, esses nós devem retornar esse valor</li>
 </ul>
 </li>
-<li>No <code>run()</code>, antes de retornar, adicionar um <code>FuncCall</code> node na raiz para chamada da <code>main()</code></li>
 </ol>
 <div class="admonition atenção">
 <p class="admonition-title">Atenção</p>
@@ -1256,14 +1234,15 @@
 <p>Implementar <code>struct</code> <em>adaptada</em> no compilador. Assim como funções, <em>struct</em> é apenas um molde e só é um objeto concreto após uma instância. Cuidado com a tipagem dos atributos. É possível aninhar diversas <em>structs</em>. Não implementar a inicialização na declaração.</p>
 <p>Segue um exemplo abaixo:
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-<span class="w">  </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="p">(){</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="nc">A</span><span class="p">;</span><span class="w"> </span><span class="c1">// Creates an instance of A</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// Creates an object of A</span>
 <span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Assigns 1 to x.b</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 1</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 1</span>
 <span class="w">  </span><span class="p">}</span>
+<span class="w">   </span><span class="c1">// test main function call</span>
 </code></pre></div></p>
 </div>
 <h2 id="questionario">Questionário</h2>
