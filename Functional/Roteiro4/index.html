@@ -451,9 +451,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entrega-17mar2026-as-07h15" class="md-nav__link">
+  <a href="#entrega-10sep2026-as-07h15" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrega: 17/Mar/2026 às 07h15
+      Entrega: 10/Sep/2026 às 07h15
     </span>
   </a>
   
@@ -572,19 +572,11 @@
 
 
 <h1 id="roteiro-4-functional-v12">Roteiro 4 (Functional) - <strong>v1.2</strong></h1>
-<h2 id="entrega-17mar2026-as-07h15">Entrega: 17/Mar/2026 às 07h15</h2>
+<h2 id="entrega-10sep2026-as-07h15">Entrega: 10/Sep/2026 às 07h15</h2>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Implementar a árvore sintática abstrata (AST)</li>
 </ol>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Se você não desenvolveu os extras em uma branch separada. Vai precisar criar uma branch a partir da última versão (v1.1.X) bem sucedida:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch_name<span class="w"> </span>v1.1.X
-</code></pre></div>
-<p>Não se esqueça de dar <em>merge</em> na main quando acabar.</p>
-<p>A partir desse roteiro, crie uma branch extra antes de realizar o <em>extra credit</em>. Não se esqueça de dar <em>merge</em> nessa branch quando acabar o roteiro principal.</p>
-</div>
 <h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>Nesse roteiro, a análise semântica será removida de dentro do <code>Parser</code>. Portanto as funções não irão mais manipular números e realizar cálculos diretamente.</p>
 <p>A ideia é durante a análise sintática, será construída a AST (Abstract Syntax Tree), e está será a responsável pela etapa semântica.</p>
@@ -596,17 +588,25 @@
 <li>Ignore os parênteses</li>
 </ul>
 <p>A implementação seguirá de forma análoga ao tipo <code>Token</code>. Onde será criado um <em>record</em> Node com os respectivos construtores dos nós:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="kt">Node</span>
-<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">IntNode</span><span class="w"> </span><span class="kt">Int</span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">UnOp</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="kt">Node</span>
-<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">BinOp</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="kt">Node</span>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span> <span class="n">Node</span> <span class="o">=</span> <span class="n">IntNode</span> <span class="o">|</span> <span class="n">UnOp</span> <span class="o">|</span> <span class="n">BinOp</span>
 </code></pre></div>
 <p>Nos nós <code>UnOp</code> e <code>BinOp</code>, haverá um valor que guardará a operação correspondente. Por exemplo, um nó BinOp irá armazenar o valor <code>+</code>, <code>-</code>, <code>*</code> ou <code>/</code>.</p>
 <p>Por ser uma estrutura em árvore, os nós podem ter filhos, que também serão outros nós. Para guardar essa estrutura, cada nó possui uma construção específica: <code>UnOp</code> possui um <code>Node</code> e <code>BinOp</code> possui dois <code>Nodes</code> (A árvore nem sempre é binária).</p>
 <p>Por fim, haverá um método <code>evaluate</code> que será onde a etapa semântica acontecerá de fato. Cada nó possuirá a sua própria implementação do método via <em>pattern matching</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">evaluate</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
-<span class="nf">evaluate</span><span class="w"> </span><span class="p">(</span><span class="kt">IntNode</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">n</span>
-<span class="nf">evaluate</span><span class="w"> </span><span class="p">(</span><span class="kt">UnOp</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">evaluate</span><span class="w"> </span><span class="n">a</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">node</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">IntNode</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">case</span> <span class="n">BinOp</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">evaluate_binop</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_binop</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">case</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="o">...</span>
+
 <span class="o">...</span>
 </code></pre></div>
 <p>Todo erro disparado em alguma classe herdeira de <code>Node</code> precisa ter o prefixo: <code>[Semantic]</code>.</p>
@@ -628,6 +628,7 @@
 <p>De volta à <code>main</code>, basta realizar o <code>evaluate</code> da raiz para obter o resultado calculado final. Todas operações serão iniciados automaticamente por cada <code>evaluate</code> subsequente, sem a necessidade de alguma intervenção.</p>
 <h2 id="tarefas">Tarefas:</h2>
 <ul>
+<li>Atualizar a URL do Diagrama Sintático (não deve mudar a figura).</li>
 <li>
 <p>Criar um <em>record</em> <em>Node</em>, conforme a especificação acima
   Todas os <em>data types</em> devem retornar no método <code>evaluate</code> - via <em>pattern matching</em> de construção - o valor correspondentes à operação de cada classe. Por Exemplo: <code>evaluate</code> do <code>IntVal</code> deve retornar o próprio valor inteiro, <code>evaluate</code> de <code>BinOp</code> deve retornar a operação dos seus dois filhos, etc.</p>
