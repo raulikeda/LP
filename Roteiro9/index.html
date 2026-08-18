@@ -251,6 +251,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional/Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional/Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../Roteiro1/" class="md-nav__link">
         
@@ -258,6 +349,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -470,28 +627,27 @@
 <li>Escopo de variáveis</li>
 </ol>
 <h2 id="exemplo-de-sintaxe">Exemplo de sintaxe:</h2>
-<pre><code class="language-c">int b = 5; // Variável Global
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Global</span>
 
-void soma(int x, int y)  {
-  int a; // Variável Local
-  a = x + y; 
-  printf(a); // Imprime 7
-  return a;
-}
+<span class="kt">void</span><span class="w"> </span><span class="nf">soma</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Local</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
 
-void main()  {
-  int a;
-  {
-    int b;
-    a = 3;
-    b = soma(a, 4);
-    printf(b); // Imprime 7
-  }
-  printf(a); // Imprime 3
-  printf(b); // Imprime 5
-}
-
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 3</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 5</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="funcoes">Funções</h2>
 <p>Como exemplificado acima, a linguagem permite declarar funções simples e com declaração de tipo. Todas as funções a princípio possuem visibilidade pública e podem ser usadas em outras Funções. Não será possível declarar uma função dentro de uma função.</p>
 <h2 id="lexer">Lexer</h2>
@@ -562,8 +718,8 @@ void main()  {
 <li>Capture o <code>return</code>, se houver, e verifique o tipo de retorno da função. Retorne o valor (cuidado com o <code>void</code>)</li>
 </ul>
 <h2 id="ebnf-final">EBNF Final</h2>
-<pre><code class="language-ebnf">
-</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p>Gerar o Diagrama Sintático e atualizar o README.</p>
 <h2 id="tarefas">Tarefas</h2>
 <ol>
@@ -630,17 +786,17 @@ void main()  {
 <p class="admonition-title">Question</p>
 <p>Implementar <code>struct</code> <em>adaptada</em> no compilador. Assim como funções, <em>struct</em> é apenas um molde e só é um objeto concreto após uma instância. Cuidado com a tipagem dos atributos. É possível aninhar diversas <em>structs</em>. Não implementar a inicialização na declaração.</p>
 <p>Segue um exemplo abaixo:
-```c
-  struct A {
-    int b;
-  };</p>
-<p>void main() {
-    struct A x; // Creates an object of A
-    x.b = 1; // Assigns 1 to x.b
-    printf(x.b); // Prints 1
-  }
-   // test main function call
-```</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// Creates an object of A</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Assigns 1 to x.b</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 1</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">   </span><span class="c1">// test main function call</span>
+</code></pre></div></p>
 </div>
 <h2 id="questionario">Questionário</h2>
 <ol>

@@ -251,6 +251,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Roteiro1/" class="md-nav__link">
         
@@ -258,6 +349,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -470,28 +627,27 @@
 <li>Escopo de variáveis</li>
 </ol>
 <h2 id="exemplo-de-sintaxe">Exemplo de sintaxe:</h2>
-<pre><code class="language-rust">let mut b:i32 = 5; // Variável Global
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Global</span>
 
-fn soma(x:i32, y:i32) -&gt;  i32 {
-  let mut a:i32; // Variável Local
-  a = x + y; 
-  println!(a); // Imprime 7
-  return a;
-}
+<span class="k">fn</span><span class="w"> </span><span class="nf">soma</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável Local</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
 
-fn main() -&gt;  () {
-  let mut a:i32;
-  {
-    let mut b:i32;
-    a = 3;
-    b = soma(a, 4);
-    println!(b); // Imprime 7
-  }
-  println!(a); // Imprime 3
-  println!(b); // Imprime 5
-}
-
-</code></pre>
+<span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 3</span>
+<span class="w">  </span><span class="fm">println!</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 5</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="funcoes">Funções</h2>
 <p>Como exemplificado acima, a linguagem permite declarar funções simples e com declaração de tipo. Todas as funções a princípio possuem visibilidade pública e podem ser usadas em outras Funções. Não será possível declarar uma função dentro de uma função.</p>
 <ul>
@@ -535,12 +691,12 @@ fn main() -&gt;  () {
 <ul>
 <li>Modificar o construtor do tipo para uma lista ligada:</li>
 </ul>
-<pre><code class="language-haskell">type Frame = [(String, Variable)]
-data SymbolTable
-  = EmptyST
-  | Scope Frame SymbolTable
-  deriving (Show, Eq)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="kt">Frame</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">[(</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">Variable</span><span class="p">)]</span>
+<span class="kr">data</span><span class="w"> </span><span class="kt">SymbolTable</span>
+<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">EmptyST</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">Scope</span><span class="w"> </span><span class="kt">Frame</span><span class="w"> </span><span class="kt">SymbolTable</span>
+<span class="w">  </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">,</span><span class="w"> </span><span class="kt">Eq</span><span class="p">)</span>
+</code></pre></div>
 <p>Com isso é possível criar uma tabela vazia (<code>EmptyST</code>) ou um novo escopo (<code>Scope</code>) com novo <em>frame</em>.</p>
 <ul>
 <li>Modificar as as funções <code>createVar</code>, <code>setVar</code>, <code>getVar</code> para se adequar ao novo modelo de dados.</li>
@@ -553,10 +709,10 @@ data SymbolTable
 <ul>
 <li>Modificar o tipo de retorno da função <code>execute</code> para <code>IO ExecResult</code>, onde:</li>
 </ul>
-<pre><code class="language-haskell">data ExecResult
-  = Normal SymbolTable FuncTable
-  | Returned Variable SymbolTable FuncTable
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="kt">ExecResult</span>
+<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">Normal</span><span class="w"> </span><span class="kt">SymbolTable</span><span class="w"> </span><span class="kt">FuncTable</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">Returned</span><span class="w"> </span><span class="kt">Variable</span><span class="w"> </span><span class="kt">SymbolTable</span><span class="w"> </span><span class="kt">FuncTable</span>
+</code></pre></div>
 <ul>
 <li>Com isso. Os nós que retornam valor, usarão o padrão <code>Returned</code>, já os nós atuais utilizam o padrão <code>Normal</code>.</li>
 </ul>
@@ -651,16 +807,16 @@ data SymbolTable
 <p class="admonition-title">Question</p>
 <p>Implementar <code>struct</code> <em>adaptada</em> no compilador. Assim como funções, <em>struct</em> é apenas um molde e só é um objeto concreto após uma instância. Cuidado com a tipagem dos atributos. É possível aninhar diversas <em>structs</em>. Não implementar a inicialização na declaração.</p>
 <p>Segue um exemplo abaixo:
-```rust
-  struct A {
-    let mut b:i32;
-  };</p>
-<p>fn main() -&gt;  (){
-    let x:A; // Creates an instance of A
-    x.b = 1; // Assigns 1 to x.b
-    println!(x.b); // Prints 1
-  }
-```</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="kt">i32</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="p">(){</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="nc">A</span><span class="p">;</span><span class="w"> </span><span class="c1">// Creates an instance of A</span>
+<span class="w">    </span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Assigns 1 to x.b</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 1</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></p>
 </div>
 <h2 id="questionario">Questionário</h2>
 <ol>

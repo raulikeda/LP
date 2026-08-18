@@ -251,6 +251,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional/Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional/Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../Roteiro1/" class="md-nav__link">
         
@@ -258,6 +349,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -452,6 +609,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercícios Adicionais
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -479,18 +645,18 @@
 </ol>
 <h2 id="requisitos-do-roteiro">Requisitos do Roteiro</h2>
 <p>A meta do Roteiro é conseguir interpretar o seguinte código:</p>
-<pre><code class="language-c">// Comentário!
-x1 = 3;
-y2 = 4;
-z_final = x1 + y2;
-printf(z_final);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Comentário!</span>
+<span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">z_final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">z_final</span><span class="p">);</span>
+</code></pre></div>
 <p>Esse roteiro será dividido em pequenas tarefas, cada uma implementando uma nova funcionalidade no compilador.</p>
 <h3 id="leitura-do-arquivo">Leitura do arquivo</h3>
 <p>Vamos substituir a entrada de código direto em <code>argv</code> pelo nome de um arquivo em formato texto.</p>
 <p>Agora a entrada esperada é:</p>
-<pre><code class="language-shell">$ python3 main.py teste.c
-</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span>teste.c
+</code></pre></div>
 <p>Portanto, você deve abrir e ler o código no nome do arquivo de entrada antes de realizar a compilação.</p>
 <h3 id="comentarios">Comentários</h3>
 <p>Os comentários serão tratados na etapa de Pré-processamento que ocorre antes mesmo da etapa léxica (<code>Lexer</code>). </p>
@@ -499,12 +665,12 @@ printf(z_final);
 <p>O método <code>filter()</code> deve ser chamado ANTES de criar o objeto <code>Lexer</code>, de preferência na <code>main()</code>.</p>
 <p>Dica: opte por usar <code>regex</code> para a filtragem.</p>
 <p>Antes:</p>
-<pre><code class="language-c">// Este é um comentário
-x = 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Este é um comentário</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <p>Depois:</p>
-<pre><code class="language-c">x = 1;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 <div class="admonition atenção">
 <p class="admonition-title">ATENÇÃO</p>
 <p>Não adicionar quebras de linhas vazias ou espaços no Prepro. Deixe isso a cargo do Lexer.</p>
@@ -561,7 +727,7 @@ x = 1;
 <p>Na figura é preciso adaptar o token EOL para o correspondente na linguagem compilada do semestre.</p>
 </div>
 <p>A EBNF atualizada será:</p>
-<pre><code class="language-ebf">PROGRAM = { STATEMENT } ;
+<div class="highlight"><pre><span></span><code>PROGRAM = { STATEMENT } ;
 STATEMENT = ((IDENTIFIER, &quot;=&quot;, EXPRESSION) | (PRINT, &quot;(&quot;, EXPRESSION, &quot;)&quot;) | ε), EOL ;
 EXPRESSION = TERM, { (&quot;+&quot; | &quot;-&quot;), TERM } ;
 TERM = FACTOR, { (&quot;*&quot; | &quot;/&quot;), FACTOR } ;
@@ -570,7 +736,7 @@ NUMBER = DIGIT, {DIGIT} ;
 DIGIT = 0 | 1 | ... | 9 ;
 IDENTIFIER = LETTER, {LETTER | DIGIT | &quot;_&quot;} ;
 LETTER = a | b | ... | z | A | B | ... | Z ;
-</code></pre>
+</code></pre></div>
 <p>Logo, serão criadas duas novas funções na classe <code>Parser</code>:</p>
 <ul>
 <li><code>parseProgram()</code>: será o novo ponto de início da análise sintática, substituindo a chamada do <code>parseExpresion()</code> no método <code>run()</code>. Ele irá realizar um <em>loop</em> enquanto não atingir o token <code>EOF</code>. A cada iteração, irá realizar a chamada do <code>parseStatement()</code>, armazenando as sub-árvores retornadas como filhos de um nó <code>Block</code>.</li>
@@ -611,13 +777,12 @@ LETTER = a | b | ... | z | A | B | ... | Z ;
 <p class="admonition-title">Question</p>
 <p>Implementar constantes e variáveis imutáveis no compilador. Constantes são resolvidos durante o Preprocessamento com substituição direta (logo o símbolo que representa a constante deixará de existir antes da etapa léxica). Variáveis imutáveis funcionam iguais às variáveis tradicionais, porém não podem ter o seu valor alterado durante a execução (isso implica que deve haver a inicialização durante a declaração).</p>
 <p>Segue um exemplo abaixo:
-```c</p>
-<h1 id="define-n-1-constant-n">define N 1;      // Constant N</h1>
-<p>const x = 1;        // Immutable variable x
-printf(N);      // This is actually: print(1);
-N = 1;            // Parser Error: this is 1 = 1 [invalid]
-x = 2;            // Semantic Error: cannot change the value of x
-```</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define N 1;      </span><span class="c1">// Constant N</span>
+<span class="k">const</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">        </span><span class="c1">// Immutable variable x</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">N</span><span class="p">);</span><span class="w">      </span><span class="c1">// This is actually: print(1);</span>
+<span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">            </span><span class="c1">// Parser Error: this is 1 = 1 [invalid]</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">            </span><span class="c1">// Semantic Error: cannot change the value of x</span>
+</code></pre></div></p>
 </div>
 <h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
 <ol>

@@ -12,7 +12,7 @@
       
       
       
-        <link rel="next" href="Roteiro1/">
+        <link rel="next" href="Functional/Funcional/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -367,6 +367,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Functional/Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Functional/Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="Roteiro1/" class="md-nav__link">
         
@@ -374,6 +465,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -609,11 +766,11 @@
 <p>Antes de enviar uma tag, não se esqueça de realizar <em>commit</em> e <em>push</em> para o repositório remoto! Teste localmente antes de enviar uma tag!</p>
 </div>
 <p>Para realizar a entrega do código da versão atual, você deve enviar uma tag para o repositório remoto. É necessário acrescentar uma <em>tag</em> e realizar um <em>push</em> específico.</p>
-<p>No exemplo abaixo, um roteiro implementa a versão 0.1.x do compilador, utiliza-se os seguintes comandos:</p>
-<pre><code class="language-bash"># Apenas depois de ter dado push no seu código!
-$ git tag v0.1.0
-$ git push origin v0.1.1
-</code></pre>
+<p>No exemplo abaixo, um roteiro implementa a versão 0.1.x do compilador, utiliza-se os seguintes comandos:
+<div class="highlight"><pre><span></span><code><span class="c1"># Apenas depois de ter dado push no seu código!</span>
+$<span class="w"> </span>git<span class="w"> </span>tag<span class="w"> </span>v0.1.0
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.1.1
+</code></pre></div></p>
 <p>Só é possível colocar uma <em>tag</em> apenas uma vez, portanto solte a <em>tag</em> apenas quando houver finalizado. Caso precise soltar uma correção, utilize um incremento no número do <em>patch</em>, por exemplo v0.1.2, v0.1.3, etc.</p>
 <p>Também é possível realizar <code>tags</code> utilizando releases no website, porém é pouco produtivo.</p>
 <h2 id="verificacao-sintatica">Verificação Sintática</h2>
@@ -623,8 +780,8 @@ $ git push origin v0.1.1
 <p>Todos os roteiros a partir da versão v1.0 possuem um exercício extra valendo pontuação adicional na nota de compilador da disciplina. Os execícios extras utilizam uma tag com prefixo 'xX.X'. Por exemplo, o exercício extra da versão v1.0 será x1.0.</p>
 <p>Você não deve carregar as modificações para o próximo roteiro porque pode interferir na correção sintática. É aconselhável implementar os exercícios em uma <em>branch</em> separada.</p>
 <p>Por exemplo: ao terminar o roteiro v1.0 na tag v1.0.3, crie uma branch para realizar o extra credit:</p>
-<pre><code class="language-bash">$ git checkout -b x1.0 v0.1.3
-</code></pre>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>x1.0<span class="w"> </span>v0.1.3
+</code></pre></div>
 <p>Ao terminar a atividade, pode soltar uma tag na própria branch.</p>
 <p>Não se esqueça de voltar para a versão atual antes de desenvolver o próximo roteiro.</p>
 <p>Ver a pontuação de cada exercício nos slides da Aula 01 no Blackboard.</p>

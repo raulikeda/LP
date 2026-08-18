@@ -251,6 +251,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Roteiro1/" class="md-nav__link">
         
@@ -258,6 +349,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -473,8 +630,8 @@
 <p>Atenção especial ao <code>Print</code>.</p>
 <h3 id="lazy-evaluation-o-retorno">Lazy evaluation - o retorno</h3>
 <p>Agora haverá vários pontos onde <em>lazy evaluation</em> irá atuar, e a recomendação é: force a execução no <code>execute</code> da raiz na <code>main</code>:</p>
-<pre><code class="language-haskell">    !table &lt;- execute (run (removeComments (code ++ &quot;\n&quot;))) emptyTable
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">!</span><span class="n">table</span><span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="p">(</span><span class="n">run</span><span class="w"> </span><span class="p">(</span><span class="n">removeComments</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)))</span><span class="w"> </span><span class="n">emptyTable</span>
+</code></pre></div>
 <h2 id="tarefas">Tarefas</h2>
 <ol>
 <li>Atualize a <strong>EBNF</strong> e o <strong>DS</strong> no GitHub</li>
@@ -493,10 +650,10 @@
 <p class="admonition-title">Question</p>
 <p>Implementar a operação de <em>casting</em>. Ele é um operador unário que possui a maior prioridade, apenas atrás do parênteses. O tipo a ser convertido será sinalizado na estrutura do operador. Implementar também números do tipo <em>float</em>. Será possível realizar operações entre <em>int</em> e <em>float</em> livremente, mas o resultado será sempre <em>float</em> quando incluir um número <em>float</em> na operação.</p>
 <p>Segue um exemplo abaixo:</p>
-<p><code>rust
-  let mut y:f64 = 1.6;
-  let mut x:i32 = (i32) y; // Converts to INT 2 and assign to x
-  y = x + y; // z receives FLOAT 3.6</code></p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="kt">f64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Converts to INT 2 and assign to x</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// z receives FLOAT 3.6</span>
+</code></pre></div>
 </div>
 <h2 id="questionario">Questionário</h2>
 <ol>

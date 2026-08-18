@@ -251,6 +251,97 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funcional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Funcional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Roteiro1/" class="md-nav__link">
         
@@ -258,6 +349,72 @@
   
   <span class="md-ellipsis">
     Roteiro 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roteiro4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 4
     
   </span>
   
@@ -423,8 +580,8 @@
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Se você não desenvolveu os extras em uma branch separada. Vai precisar criar uma branch a partir da última versão (v1.1.X) bem sucedida:</p>
-<p><code>bash
-$ git checkout -b branch_name v1.1.X</code></p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch_name<span class="w"> </span>v1.1.X
+</code></pre></div>
 <p>Não se esqueça de dar <em>merge</em> na main quando acabar.</p>
 <p>A partir desse roteiro, crie uma branch extra antes de realizar o <em>extra credit</em>. Não se esqueça de dar <em>merge</em> nessa branch quando acabar o roteiro principal.</p>
 </div>
@@ -439,19 +596,19 @@ $ git checkout -b branch_name v1.1.X</code></p>
 <li>Ignore os parênteses</li>
 </ul>
 <p>A implementação seguirá de forma análoga ao tipo <code>Token</code>. Onde será criado um <em>record</em> Node com os respectivos construtores dos nós:</p>
-<pre><code class="language-haskell">data Node
-  = IntNode Int
-  | UnOp String Node
-  | BinOp String Node Node
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="kt">Node</span>
+<span class="w">  </span><span class="ow">=</span><span class="w"> </span><span class="kt">IntNode</span><span class="w"> </span><span class="kt">Int</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">UnOp</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="kt">Node</span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="kt">BinOp</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="kt">Node</span>
+</code></pre></div>
 <p>Nos nós <code>UnOp</code> e <code>BinOp</code>, haverá um valor que guardará a operação correspondente. Por exemplo, um nó BinOp irá armazenar o valor <code>+</code>, <code>-</code>, <code>*</code> ou <code>/</code>.</p>
 <p>Por ser uma estrutura em árvore, os nós podem ter filhos, que também serão outros nós. Para guardar essa estrutura, cada nó possui uma construção específica: <code>UnOp</code> possui um <code>Node</code> e <code>BinOp</code> possui dois <code>Nodes</code> (A árvore nem sempre é binária).</p>
 <p>Por fim, haverá um método <code>evaluate</code> que será onde a etapa semântica acontecerá de fato. Cada nó possuirá a sua própria implementação do método via <em>pattern matching</em>:</p>
-<pre><code class="language-haskell">evaluate :: Node -&gt; Int
-evaluate (IntNode n) = n
-evaluate (UnOp &quot;+&quot; a) = evaluate a
-...
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nf">evaluate</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+<span class="nf">evaluate</span><span class="w"> </span><span class="p">(</span><span class="kt">IntNode</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">n</span>
+<span class="nf">evaluate</span><span class="w"> </span><span class="p">(</span><span class="kt">UnOp</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">evaluate</span><span class="w"> </span><span class="n">a</span>
+<span class="o">...</span>
+</code></pre></div>
 <p>Todo erro disparado em alguma classe herdeira de <code>Node</code> precisa ter o prefixo: <code>[Semantic]</code>.</p>
 <div class="admonition atenção">
 <p class="admonition-title">MUITA ATENÇÃO!!!</p>
@@ -484,21 +641,16 @@ evaluate (UnOp &quot;+&quot; a) = evaluate a
 <li>Quando o <code>main</code>, de posse de toda a árvore montada, executar o método <code>evaluate</code> da raiz, este deverá executar <strong>recursivamente</strong> os seus filhos, obtendo ao final o valor interpretado.</li>
 </ul>
 <h2 id="base-de-testes">Base de Testes:</h2>
-<pre><code>  Todos os testes do roteiro anterior
-</code></pre>
+<div class="highlight"><pre><span></span><code>  Todos os testes do roteiro anterior
+</code></pre></div>
 <h2 id="extra-credit">Extra Credit</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Implementar o operador fatorial de um número inteiro. O símbolo que representa o operador é o <code>!</code>, e o token se chamará <code>FACT</code>. Ele é posicionado após um valor. Fatorial tem precedência maior que os unários, porém menor que os parênteses. Não será aceito a operação fatorial de números negativos.</p>
 <p>Segue um exemplo abaixo:
-```bash</p>
-<blockquote>
-<blockquote>
-<p>-3!
-  -6
-```</p>
-</blockquote>
-</blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>&gt;&gt;<span class="w"> </span>-3!
+<span class="w">  </span>-6
+</code></pre></div></p>
 </div>
 <h2 id="exercicios-adicionais">Exercícios Adicionais</h2>
 <ol>
