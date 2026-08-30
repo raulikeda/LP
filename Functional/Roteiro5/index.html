@@ -1104,8 +1104,8 @@
 <p>Obs: usar <code>isAlpha</code> e <code>isAlphaNum</code>. Cuidado que <code>isSpace</code> considera <code>\n</code> como verdadeiro, caso seja usado como <code>EOL</code>.</p>
 <h3 id="novos-nos">Novos nós</h3>
 <p>Os novos nós não irão retornar valores, mas irão manipular a <code>SymbolTable</code>. Logo uma alternativa é criar uma função especial para nós que representam <code>statements</code>, essa função será: <code>execute :: (Node, SymbolTable) -&gt; SymbolTable</code>.</p>
-<div class="admonition attention haskell">
-<p class="admonition-title">Attention</p>
+<div class="admonition attention">
+<p class="admonition-title">Haskell</p>
 <p>Precisa do monad por causa do <code>print</code>: <code>execute :: Node -&gt; SymbolTable -&gt; IO SymbolTable</code>. Outra alternativa era usar o monad <code>State</code> para <code>SymbolTable</code>.
 Devido ao uso do <code>IO</code>, você precisa utilizar alguma sintaxe do tipo <code>do / return</code> ou tratar diretamente o lift das funções para o monad.</p>
 </div>
