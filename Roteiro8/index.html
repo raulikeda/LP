@@ -718,21 +718,29 @@
 
 <h1 id="roteiro-8-v30">Roteiro 8 - <strong>v3.0</strong></h1>
 <h2 id="entrega-22oct2026-as-07h15">Entrega: 22/Oct/2026 às 07h15</h2>
+<div class="slide-frame">
+  <iframe
+    id="marp-slide"
+    src="../../slides/LP-Aula16.html"
+    allowfullscreen>
+  </iframe>
+</div>
+
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>Geração de Código</li>
 </ol>
 <h2 id="exemplo-de-codigo">Exemplo de Código:</h2>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanf</span><span class="p">();</span>
-<span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="nx">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Scanln</span><span class="p">()</span>
+<span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span>
+<span class="w">  </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
-<span class="n">printf</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="nx">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="mesmo-exemplo-em-assembly-nasm-gerado-pelo-compilador">Mesmo exemplo em Assembly NASM (gerado pelo compilador):</h2>
 <div class="highlight"><pre><span></span><code><span class="nf">section</span><span class="w"> </span><span class="no">.data</span>
@@ -946,7 +954,7 @@
 <li>Print</li>
 <li>Scan</li>
 <li>Você pode aproveitar as subrotinas do código de apoio do exemplo acima (condicionais) publicadas no Blackboard</li>
-<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.c sai teste.asm</li>
+<li>O seu compilador deve escrever um arquivo asm com o mesmo prefixo de entrada. Exemplo: teste.go sai teste.asm</li>
 <li>Para montar o código e transformá-lo em executável x86 + Linux (<strong>versão do Servidor</strong>):</li>
 </ul>
 <div class="highlight"><pre><span></span><code>$ nasm -f elf32 -o program.o program.asm
