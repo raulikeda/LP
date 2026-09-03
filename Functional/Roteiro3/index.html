@@ -863,9 +863,9 @@
 <p>Para realizar a "chamada" de um diagrama, usa-se um retângulo, em oposição ao consumo de tokens (representado por círculos). Veja o diagrama abaixo:</p>
 <p><img alt="center|white" src="../../images/H3-ds-full.png" /></p>
 <p>Porém para implementar de um modo mais funcional, será preciso transformar em uma recursão. Primeiro vamos desmembrar o loop:</p>
-<p><img alt="center|white" src="../images/H03/DS-expr-loop.png" /></p>
+<p><img alt="center|white" src="../../images/H03/DS-expr-loop.jpeg" /></p>
 <p>Para em seguida, separar uma função auxiliar que permitirá realizar a recursão:</p>
-<p><img alt="center|white" src="../images/H03/DS-expr-rec.png" /></p>
+<p><img alt="center|white" src="../../images/H03/DS-expr-rec.jpeg" /></p>
 <p>O ponto de entrada ainda continua sendo o <code>EXPRESSION</code>, contudo ao invés de consumir um número, ele irá mover-se para o diagrama <code>TERM</code>.</p>
 <p>Cada diagrama é independente do outro, inclusive em casos de recursão (por exemplo, o caso do <code>FACTOR</code>). Isso significa que cada diagrama irá calcular o seu resultado intermediário de forma independente e retorná-lo quando sair.</p>
 <p>Ao retornar para o diagrama antecessor, o resultado recebido deverá ser tratado adequadamente. Ver o exemplo de execução nos slides da aula.</p>
