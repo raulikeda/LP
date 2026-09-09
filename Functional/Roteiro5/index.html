@@ -1056,7 +1056,20 @@
 <p>As variáveis e seus respectivos valores vão ser armazenados na Tabela de Símbolos (<code>SymbolTable</code> ou <code>ST</code>). Além dos valores, também utilizaremos a tabela para armazenar outras características da variável no futuro (exemplo: tipo do dado, somente leitura, etc).</p>
 <p>A <code>SymbolTable</code> será um tipo <code>List[Tuple[str, Variable]])</code> (em Haskell pode ser um <em>monad list</em>). Ele será imutável e todo novo dado entrará à esquerda da lista atual.</p>
 <p>Já o tipo <code>Variable</code> servirá apenas como um <em>record</em> para armazenar as informações das variáveis. Por enquanto conterá apenas <code>int</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="k">class</span><span class="w"> </span><span class="nc">Variable</span><span class="p">:</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">int</span>
+</code></pre></div>
 <p>Implementar um função para criar uma SymbolTable vazia. Implementar uma função para adicionar um novo item na lista à esquerda. Lembre-se que a <code>SymbolTable</code> é imutável, então a adição precisa receber uma <code>SymbolTable</code> e retornar uma <code>SymbolTable</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span> <span class="n">Entry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Variable</span><span class="p">]</span>
+<span class="nb">type</span> <span class="n">SymbolTable</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">Entry</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">empty</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">SymbolTable</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SymbolTable</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">variable</span><span class="p">)]</span> <span class="o">+</span> <span class="n">st</span>
+</code></pre></div>
 <p>Implementar uma função de busca, varrendo do início até o final. Verificar a função <code>lookup</code> usando a assinatura <code>lookup :: (str, List[Tuple[str, Variable]])) -&gt; Result Int</code>. Durante a busca do valor, o método correspondente deve retornar um erro caso a variável não exista. <em>Result[T]</em> é um tipo <em>generic</em> que permitirá receber um <code>int</code> ou <code>None</code> (caso não ache o valor). Em Haskell usar o monad <code>Maybe</code>.</p>
 <p>Em Python:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Union</span>
@@ -1085,9 +1098,32 @@
 </code></pre></div>
 <p>Normalmente, as linguagens funcionais já implementam o tipo <code>Result</code> (<code>Maybe</code> em Haskell).</p>
 <p>Todo erro disparado na <code>SymbolTable</code> precisa ter o prefixo: <code>[Semantic]</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lookup</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">match</span> <span class="n">st</span><span class="p">:</span>
+        <span class="k">case</span> <span class="p">[]:</span>
+            <span class="k">return</span> <span class="n">Err</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Semantic] variável não encontrada: &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">case</span> <span class="p">[(</span><span class="n">key</span><span class="p">,</span> <span class="n">variable</span><span class="p">),</span> <span class="o">*</span><span class="n">tail</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Ok</span><span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">case</span><span class="w"> </span><span class="p">[</span><span class="k">_</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">lookup</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rest</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="ajustes-na-ast">Ajustes na AST</h3>
 <p>Antes de implementar as novas <em>features</em> da linguagem, será realizado um pequeno ajuste no método <code>evaluate</code> do Node.</p>
-<p>Você precisa adicionar um argumento <code>SymbolTable</code> na chamada da função. Não esquecer de encadear a passagem da tabela nas chamadas recursivas.</p>
+<p>Você precisa adicionar um argumento <code>SymbolTable</code> na chamada e no retorno da função. Não esquecer de encadear a passagem da tabela nas chamadas recursivas. A nova assinatura será:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">node</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">IntNode</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">case</span> <span class="n">UnOp</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">evaluate_unop</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_binop</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">case</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="o">...</span>
+</code></pre></div>
 <h3 id="lexer">Lexer</h3>
 <p>Alguns novos símbolos serão incorporados ao alfabeto e precisam ser tratados no <code>Lexer</code>. Segue a lista:</p>
 <ul>
@@ -1121,11 +1157,22 @@ Devido ao uso do <code>IO</code>, você precisa utilizar alguma sintaxe do tipo 
 <h3 id="no-identifier">Nó Identifier</h3>
 <p>Nó que representa uma variável. Será uma folha (sem filhos) e o seu <code>evaluate</code> retornará o valor da variável na <code>SymbolTable</code> no momento da execução.</p>
 <p>Notem que esse valor não estará na variável diretamente, mas no objeto <code>SymbolTable</code> passado como argumento. No record estará o nome da variável para realizar a busca.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_identifier</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
+    <span class="k">match</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Ok</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">case</span> <span class="n">Err</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">Exeception</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="no-de-impressao-print">Nó de Impressão (Print)</h3>
 <p>O nó terá apenas 1 filho e o seu <code>execute</code> será simplesmente a impressão do valor retornado pelo <code>evaluate</code> do seu filho. Haskell: atenção, ele retorna <code>IO ()</code> e não <code>IO SymbolTable</code>.</p>
 <h3 id="no-de-atribuicao-assignment">Nó de Atribuição (Assignment)</h3>
 <p>O nó terá 2 records e não será considerado um nó <code>BinOp</code>. Devemos criar um nó chamado <code>Assignment</code> que terá uma função <code>execute</code> bem específica: irá guardar o valor retornado pelo <code>evaluate</code> do <strong>SEGUNDO</strong> filho na variável <code>SymbolTable</code> passado como argumento.</p>
 <p>O nome da variável estará no record, não sendo necessário executar o seu <code>evaluate</code> (Na realidade não faz sentido chamar essa função).</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">execute_assignment</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SymbolTable</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">insert</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Variable</span><span class="p">(</span><span class="n">evaluate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">)),</span> <span class="n">st</span><span class="p">)</span>
+</code></pre></div>
 <p>Obs: Haskell é lazy evaluation. Se o código de entrada não der <code>print</code>, qualquer outro código não será executado. Você deve explicitamente solicitar a execução nesse nó. Usar:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">{-# LANGUAGE BangPatterns #-}</span>
 
@@ -1135,9 +1182,16 @@ Devido ao uso do <code>IO</code>, você precisa utilizar alguma sintaxe do tipo 
 </code></pre></div>
 <h3 id="no-de-bloco-de-instrucoes-block">Nó de Bloco de Instruções (Block)</h3>
 <p>Será um nó com uma lista de filhos, onde a quantidade de filhos é o número de instruções no arquivo de entrada. O <code>execute</code> desse nó consiste em realizar o <code>execute</code> dos seus filhos.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">execute_block</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">Block</span><span class="p">,</span> <span class="n">st</span><span class="p">:</span> <span class="n">SymbolTable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SymbolTable</span><span class="p">:</span>
+    <span class="k">match</span> <span class="n">block</span><span class="o">.</span><span class="n">statements</span><span class="p">:</span>
+        <span class="k">case</span> <span class="p">[]:</span>
+            <span class="k">return</span> <span class="n">st</span>
+        <span class="k">case</span> <span class="p">[</span><span class="n">stmt</span><span class="p">,</span> <span class="o">*</span><span class="n">tail</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">execute_block</span><span class="p">(</span><span class="n">Block</span><span class="p">(</span><span class="n">tail</span><span class="p">),</span> <span class="n">execute</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">st</span><span class="p">))</span>
+</code></pre></div>
 <p>Obs: Como Block terá uma lista de Node, você pode usar a função <code>fold</code> ou <code>foldM</code> para executar os nós da lista. Cuidado com a ordem de execução!</p>
 <h3 id="no-noop">Nó NoOp</h3>
-<p><em>Dummy</em>. Não é esperado absolutamente nada desse nó, servindo apenas para representar uma instrução vazia.</p>
+<p><em>Dummy</em>. Não é esperado absolutamente nada desse nó, servindo apenas para representar uma instrução vazia. Retorne a <code>SymbolTable</code> de entrada.</p>
 <h3 id="parser">Parser</h3>
 <p>O novo diagrama sintático será:</p>
 <p><img alt="center|white" src="../../images/H5-ds-full.png" /></p>
