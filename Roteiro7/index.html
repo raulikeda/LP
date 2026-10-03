@@ -11,6 +11,8 @@
       
       
       
+        <link rel="prev" href="../Roteiro6/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Roteiro 7 - v2.2 - Ling & Par</title>
+        <title>Roteiro 7 - Ling & Par</title>
       
     
     
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roteiro 7 - v2.2
+              Roteiro 7
             
           </span>
         </div>
@@ -421,6 +423,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functional/Roteiro7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -556,6 +581,184 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 7
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roteiro 7
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrega-13oct2026-as-07h15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega: 13/Oct/2026 às 07h15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-do-roteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos do Roteiro
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos do Roteiro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lexer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symboltable" class="md-nav__link">
+    <span class="md-ellipsis">
+      SymbolTable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ast-parte-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST - Parte 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ast-parte-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      AST - Parte 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base de Testes:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Credit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questionário
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -737,6 +940,7 @@
 <h3 id="lexer">Lexer</h3>
 <p>Adicionar os novos tokens:</p>
 <ul>
+<li><code>var</code>- token <code>VAR</code></li>
 <li><code>true</code>, <code>false</code> - token <code>BOOL</code></li>
 <li>Valores string: separar todo o conteúdo entre aspas. Declarar um token tipo <code>STR</code></li>
 <li><code>string</code>, <code>int</code>, <code>bool</code> - token <code>TYPE</code></li>
@@ -777,8 +981,8 @@
 <p class="admonition-title">Question</p>
 <p>Implementar a operação de <em>casting</em>. Ele é um operador unário que possui a maior prioridade, apenas atrás do parênteses. O tipo a ser convertido será sinalizado na estrutura do operador. Implementar também números do tipo <em>float</em>. Será possível realizar operações entre <em>int</em> e <em>float</em> livremente, mas o resultado será sempre <em>float</em> quando incluir um número <em>float</em> na operação.</p>
 <p>Segue um exemplo abaixo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">floatvar</span><span class="w"> </span><span class="nx">y</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="mf">1.6</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="c1">// Converts to INT 2 and assign to x</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.6</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="c1">// Converts to INT 2 and assign to x</span>
 <span class="w">  </span><span class="nx">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="c1">// z receives FLOAT 3.6</span>
 </code></pre></div>
 </div>
