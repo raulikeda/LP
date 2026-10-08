@@ -1,0 +1,99 @@
+/* @theme insper */
+
+@import 'default';
+
+section h1:first-of-type {
+    position: absolute;
+    left: 130px;
+    top: 40px;
+    font-family: Inter;
+    font-size: 26px;
+    color: #595959;
+    line-height: normal;
+}
+section {
+    display: inline-block;
+    background-image: url("../../theme/slide.png"); 
+    background-size: cover; /* Makes the image cover the entire slide */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding-top: 140px;
+    font-family: Inter;
+    font-size: 22px;
+}
+
+section.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+section.question {
+    text-align: center;
+    padding-top: 320px;
+    font-family: Inter;
+    font-size: 60px;
+}
+
+section.narrow {
+    line-height: normal;
+}
+section.wide {
+    line-height: 300%;
+}
+section.double {
+    column-count: 2;
+}
+section.first {
+    background-image: url(../../theme/slide1-insper.png);
+    background-repeat: no-repeat;
+    background-position: 830px 96px;
+    background-size: 410px;
+}
+section.first h1 {
+    position: absolute;
+    left: 88px;
+    top: 104px;
+    width: 681px;
+    height: 150px;
+    color: black;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: left;
+}
+section.first h2 {
+    position: absolute;
+    left: 88px;
+    top: 254px;
+    color: black;
+    width: 681px;
+    height: 214px;
+    font-family: Inter;
+    font-size: 38px;
+    text-align: left;
+}
+section.first h3 {
+    position: absolute;
+    left: 88px;
+    top: 560px;
+    color: black;
+    width: 100%;
+    font-family: Inter Medium;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+}
+section.first h4 {
+    position: absolute;
+    left: 88px;
+    top: 590px;
+    color: black;
+    width: 97%;
+    font-family: Inter;
+    font-size: 24px;
+    text-align: left;
+}
