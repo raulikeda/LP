@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -960,12 +960,12 @@
 <p>Exemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Constrói um tipo IntToken que possui um data value do tipo int</span>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-<span class="k">class</span><span class="w"> </span><span class="nc">IntToken</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">IntToken</span><span class="p">:</span>
     <span class="n">value</span><span class="p">:</span> <span class="nb">int</span>
 
 <span class="c1"># Constrói um tipo EOF que não possui data</span>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">EOF</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">EOF</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="c1"># Exemplo de uso:</span>
@@ -980,19 +980,19 @@
 <p>A análise léxica ocorrerá através de uma função <code>select_next</code> que recebe um <code>Lexer</code> e retorna <code>(Token, Lexer)</code>. Ela irá quebrar o código fonte sob demanda, sempre analisando um caractere específico representado pelo índice de posição. Lembrando da filosofia funcional de que tudo é passado como argumento e retornado de uma função, sem estados ou informação externos.</p>
 <p>Ao achar um símbolo de interesse, irá parar e retornar o <code>Token</code> correspondente. Como não há estados, a função retorna o próprio código de entrada e a posição <strong>atualizada</strong>.</p>
 <p>Segue o modelo em Python:
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">select_next_token</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Token</span><span class="p">,</span> <span class="n">Lexer</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">select_next_token</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Token</span><span class="p">,</span> <span class="n">Lexer</span><span class="p">]:</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="n">skip_whitespace</span><span class="p">(</span><span class="n">lexer</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">EOF</span><span class="p">(),</span> <span class="n">lexer</span><span class="p">)</span> <span class="k">if</span> <span class="n">position</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="k">else</span> <span class="n">select_next_token_aux</span><span class="p">((</span><span class="n">code</span><span class="p">,</span> <span class="n">position</span><span class="p">))</span>
 </code></pre></div></p>
 <p>Note a preferência pelo uso do if inline ao invés da estrutura if convencional.</p>
 <p>Já a função que pula os caracteres em branco:
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">skip_whitespace</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Lexer</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">skip_whitespace</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Lexer</span><span class="p">:</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="n">lexer</span>
     <span class="n">cond</span> <span class="o">=</span> <span class="n">position</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">code</span><span class="p">[</span><span class="n">position</span><span class="p">]</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">lexer</span> <span class="k">if</span> <span class="n">cond</span> <span class="k">else</span> <span class="n">skip_whitespace</span><span class="p">((</span><span class="n">code</span><span class="p">,</span> <span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
 </code></pre></div></p>
 <p>A função auxiliar irá utilizar o <strong>pattern matching</strong> para identifcar o token atual:
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">select_next_token_aux</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Token</span><span class="p">,</span> <span class="n">Lexer</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">select_next_token_aux</span><span class="p">(</span><span class="n">lexer</span><span class="p">:</span> <span class="n">Lexer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Token</span><span class="p">,</span> <span class="n">Lexer</span><span class="p">]:</span>
     <span class="n">code</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="n">lexer</span>
     <span class="k">match</span> <span class="n">code</span><span class="p">[</span><span class="n">position</span><span class="p">]:</span>
         <span class="k">case</span><span class="w"> </span><span class="k">_</span> <span class="k">if</span> <span class="n">position</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
@@ -1033,7 +1033,7 @@
 </code></pre></div>
 <p>A função <code>parse_number</code> irá retornar o valor de um token <code>IntToken</code> ou Exception caso contrário. Use pattern matching. No caso acima, ela faz o papel do primeiro token numérico a ser consumido. Em seguida entramos na recursão da função auxiliar. </p>
 <p>Já a função <code>parse_expression_aux</code> irá analisar os tokens <code>Plus</code> e <code>Minus</code> seguidos de um <code>IntToken</code>. Em seguida ele atuará recursivamente sobre ele mesmo:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">parse_expression_aux</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">ParserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ParserState</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_expression_aux</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">ParserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ParserState</span><span class="p">]:</span>
     <span class="n">token</span><span class="p">,</span> <span class="n">lexer</span> <span class="o">=</span> <span class="n">state</span>
     <span class="k">match</span> <span class="n">token</span><span class="p">:</span>
         <span class="k">case</span> <span class="n">Plus</span><span class="p">():</span>
@@ -1163,10 +1163,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
